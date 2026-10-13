@@ -1,0 +1,3 @@
+.company-reference{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:12px 0;font:500 12px/1.5 system-ui,sans-serif}
+.company-reference img{display:block;width:auto;max-width:86px;height:23px;object-fit:contain}
+.company-reference span{opacity:.9}
