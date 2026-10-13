@@ -1,0 +1,1789 @@
+{
+  "generatedAt": "2026-10-13T09:04:27.944Z",
+  "environment": "Chromium actual local Worker UI verification; no public footage",
+  "origin": "http://127.0.0.1:8787",
+  "scenarioCount": 19,
+  "assertionCount": 227,
+  "passed": 19,
+  "failed": 0,
+  "cases": [
+    {
+      "id": "browser-mount",
+      "title": "Real browser opens an isolated synthetic workspace",
+      "status": "passed",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "Dominant identity visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Initial revision",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "DM Sans self-hosted loaded",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 408.436
+    },
+    {
+      "id": "browser-invalid-atomic",
+      "title": "Mixed invalid import and injected extraction remain visible and write nothing",
+      "status": "passed",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Refusal visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Commit disabled",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "No source mutation",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Injected refusal visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 616.369
+    },
+    {
+      "id": "browser-valid-provenance",
+      "title": "Valid evidence preserves snippets, duplicate provenance and unresolved ambiguity",
+      "status": "passed",
+      "assertionCount": 6,
+      "assertions": [
+        {
+          "label": "Duplicate displayed",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Unique sources",
+          "expected": "5",
+          "actual": "5",
+          "passed": true
+        },
+        {
+          "label": "Supporting sources",
+          "expected": "4",
+          "actual": "4",
+          "passed": true
+        },
+        {
+          "label": "Ambiguous source excluded",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "Source snippets displayed",
+          "expected": "5",
+          "actual": "5",
+          "passed": true
+        },
+        {
+          "label": "Human decision stored",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 811.593
+    },
+    {
+      "id": "browser-blocked-release",
+      "title": "A real blocked attempt lists missing evidence without mutation",
+      "status": "passed",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "Gate error visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Owned blockers visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Revision unchanged",
+          "expected": "2",
+          "actual": "2",
+          "passed": true
+        }
+      ],
+      "durationMs": 369.877
+    },
+    {
+      "id": "browser-stale-editor",
+      "title": "A stale editor shows refusal and offers explicit reload",
+      "status": "passed",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "Stale error visible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Handoff not committed",
+          "expected": "null",
+          "actual": "null",
+          "passed": true
+        }
+      ],
+      "durationMs": 576.623
+    },
+    {
+      "id": "browser-release-evidence",
+      "title": "Human simulated reviews close executable version-bound gates",
+      "status": "passed",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Whole completion count",
+          "expected": "38",
+          "actual": "38",
+          "passed": true
+        },
+        {
+          "label": "Explicit sample",
+          "expected": "40",
+          "actual": "40",
+          "passed": true
+        },
+        {
+          "label": "Current signature",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Simulated approval only",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 858.32
+    },
+    {
+      "id": "browser-stale-signature",
+      "title": "Editing handoff invalidates the signed release",
+      "status": "passed",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "Signature removed",
+          "expected": "null",
+          "actual": "null",
+          "passed": true
+        },
+        {
+          "label": "Visible invalidation",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Synthetic release state",
+          "expected": "released",
+          "actual": "released",
+          "passed": true
+        }
+      ],
+      "durationMs": 699.953
+    },
+    {
+      "id": "browser-owned-rollback",
+      "title": "Failed health creates an owned pause; rollback and review complete the slice",
+      "status": "passed",
+      "assertionCount": 9,
+      "assertions": [
+        {
+          "label": "Paused state",
+          "expected": "paused",
+          "actual": "paused",
+          "passed": true
+        },
+        {
+          "label": "Rollback owner",
+          "expected": "Synthetic Engineering owner",
+          "actual": "Synthetic Engineering owner",
+          "passed": true
+        },
+        {
+          "label": "Healthy check cannot clear obligation",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Owned rollback resolved",
+          "expected": "rolled-back",
+          "actual": "rolled-back",
+          "passed": true
+        },
+        {
+          "label": "Baseline remains missing",
+          "expected": "null",
+          "actual": "null",
+          "passed": true
+        },
+        {
+          "label": "Dominant next decision reflects completed review",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Export audit agrees",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "No session IDs",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "No receipts in export",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        }
+      ],
+      "durationMs": 1030.844
+    },
+    {
+      "id": "browser-reload-isolation",
+      "title": "Reload persists state and a second visitor remains isolated",
+      "status": "passed",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Revision survives reload",
+          "expected": "16",
+          "actual": "16",
+          "passed": true
+        },
+        {
+          "label": "Postreview survives reload",
+          "expected": "Synthetic rollout was paused after failed health evidence and the tested rollback restored the prior setup flow.",
+          "actual": "Synthetic rollout was paused after failed health evidence and the tested rollback restored the prior setup flow.",
+          "passed": true
+        },
+        {
+          "label": "Other visitor empty",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Other visitor revision",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        }
+      ],
+      "durationMs": 700.846
+    },
+    {
+      "id": "browser-live-suite",
+      "title": "UI runs actual shared rules and exposes deliberately broken controls",
+      "status": "passed",
+      "assertionCount": 5,
+      "assertions": [
+        {
+          "label": "HTTP evaluation",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Actual baseline failure count",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Injected fault detections",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        },
+        {
+          "label": "Red failed-rule labels",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        },
+        {
+          "label": "Workspace remains rolled back",
+          "expected": "rolled-back",
+          "actual": "rolled-back",
+          "passed": true
+        }
+      ],
+      "durationMs": 311.883
+    },
+    {
+      "id": "browser-zero-baseline",
+      "title": "A measured zero baseline is distinct from missing data",
+      "status": "passed",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "Zero baseline persisted",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Zero baseline rendered as zero",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Blank baseline returns to explicitly missing",
+          "expected": "null",
+          "actual": "null",
+          "passed": true
+        }
+      ],
+      "durationMs": 628.796
+    },
+    {
+      "id": "browser-responsive-1440",
+      "title": "Every view fits at 1440px with accessible labels",
+      "status": "passed",
+      "assertionCount": 15,
+      "assertions": [
+        {
+          "label": "overview no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "overview axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "feedback no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feedback axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "release no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "release axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "health no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "health axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "review no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "review axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "evaluation no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "evaluation axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "Dialog within width",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog within height",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog no horizontal overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 5025.54
+    },
+    {
+      "id": "browser-responsive-320",
+      "title": "Every view fits at 320px with accessible labels",
+      "status": "passed",
+      "assertionCount": 15,
+      "assertions": [
+        {
+          "label": "overview no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "overview axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "feedback no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feedback axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "release no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "release axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "health no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "health axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "review no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "review axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "evaluation no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "evaluation axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "Dialog within width",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog within height",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog no horizontal overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 4631.087
+    },
+    {
+      "id": "browser-responsive-390",
+      "title": "Every view fits at 390px with accessible labels",
+      "status": "passed",
+      "assertionCount": 15,
+      "assertions": [
+        {
+          "label": "overview no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "overview axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "feedback no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feedback axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "release no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "release axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "health no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "health axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "review no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "review axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "evaluation no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "evaluation axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "Dialog within width",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog within height",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog no horizontal overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 4615.182
+    },
+    {
+      "id": "browser-responsive-540",
+      "title": "Every view fits at 540px with accessible labels",
+      "status": "passed",
+      "assertionCount": 15,
+      "assertions": [
+        {
+          "label": "overview no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "overview axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "feedback no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feedback axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "release no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "release axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "health no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "health axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "review no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "review axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "evaluation no horizontal page overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "evaluation axe violations",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        },
+        {
+          "label": "Dialog within width",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog within height",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Dialog no horizontal overflow",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 4601.251
+    },
+    {
+      "id": "browser-all-dialogs-320",
+      "title": "All operational forms and footer actions fit at 320px",
+      "status": "passed",
+      "assertionCount": 39,
+      "assertions": [
+        {
+          "label": "feature fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feature no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "feature footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "priority footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "beta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "approveBeta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "security footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "privacy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "rollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "gtm footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "signRelease footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "failed footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "healthy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "postReview footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 2114.062
+    },
+    {
+      "id": "browser-all-dialogs-390",
+      "title": "All operational forms and footer actions fit at 390px",
+      "status": "passed",
+      "assertionCount": 39,
+      "assertions": [
+        {
+          "label": "feature fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feature no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "feature footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "priority footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "beta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "approveBeta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "security footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "privacy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "rollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "gtm footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "signRelease footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "failed footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "healthy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "postReview footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 2100.384
+    },
+    {
+      "id": "browser-all-dialogs-540",
+      "title": "All operational forms and footer actions fit at 540px",
+      "status": "passed",
+      "assertionCount": 39,
+      "assertions": [
+        {
+          "label": "feature fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "feature no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "feature footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "priority no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "priority footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "beta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "beta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "approveBeta no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "approveBeta footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "security no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "security footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "privacy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "privacy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "rollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "rollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "gtm no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "gtm footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "signRelease no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "signRelease footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "failed no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "failed footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "healthy no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "healthy footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "resolveRollback footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview fits viewport",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "postReview no horizontal overflow",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "postReview footer accessible",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 2212.71
+    },
+    {
+      "id": "browser-keyboard",
+      "title": "Keyboard can reach and close a dialog with visible focus",
+      "status": "passed",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Dialog opens from keyboard",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Focus remains in dialog",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Escape closes dialog",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "No browser runtime errors",
+          "expected": "[]",
+          "actual": "[]",
+          "passed": true
+        }
+      ],
+      "durationMs": 67.381
+    }
+  ],
+  "accessibility": [
+    {
+      "width": 1440,
+      "view": "overview",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "feedback",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "release",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "health",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "review",
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "view": "evaluation",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "overview",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "feedback",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "release",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "health",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "review",
+      "violations": []
+    },
+    {
+      "width": 320,
+      "view": "evaluation",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "overview",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "feedback",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "release",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "health",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "review",
+      "violations": []
+    },
+    {
+      "width": 390,
+      "view": "evaluation",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "overview",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "feedback",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "release",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "health",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "review",
+      "violations": []
+    },
+    {
+      "width": 540,
+      "view": "evaluation",
+      "violations": []
+    }
+  ],
+  "pixels": [
+    {
+      "name": "rejected-import-desktop",
+      "file": "rejected-import-desktop.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "blocked-release-desktop",
+      "file": "blocked-release-desktop.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "stale-signature-desktop",
+      "file": "stale-signature-desktop.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "owned-pause-desktop",
+      "file": "owned-pause-desktop.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "executed-evaluation-desktop",
+      "file": "executed-evaluation-desktop.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "overview-1440",
+      "file": "overview-1440.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "feedback-1440",
+      "file": "feedback-1440.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "rejected-dialog-1440",
+      "file": "rejected-dialog-1440.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "overview-320",
+      "file": "overview-320.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "feedback-320",
+      "file": "feedback-320.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "rejected-dialog-320",
+      "file": "rejected-dialog-320.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "overview-390",
+      "file": "overview-390.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "feedback-390",
+      "file": "feedback-390.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "rejected-dialog-390",
+      "file": "rejected-dialog-390.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "overview-540",
+      "file": "overview-540.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "feedback-540",
+      "file": "feedback-540.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "rejected-dialog-540",
+      "file": "rejected-dialog-540.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "beta-dialog-320",
+      "file": "beta-dialog-320.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "beta-dialog-390",
+      "file": "beta-dialog-390.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    },
+    {
+      "name": "beta-dialog-540",
+      "file": "beta-dialog-540.png",
+      "origin": "http://127.0.0.1:8787",
+      "kind": "local verification screenshot — not public footage"
+    }
+  ],
+  "runtimeErrors": []
+}

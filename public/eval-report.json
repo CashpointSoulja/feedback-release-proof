@@ -1,0 +1,2693 @@
+{
+  "schemaVersion": 1,
+  "simulationTime": "2026-10-13T09:00:00.000Z",
+  "generatedAt": "2026-10-13T08:54:31.922Z",
+  "measurement": "Measured local scenario execution time. Fixed simulation timestamps are synthetic and do not measure production savings.",
+  "baseline": {
+    "scenarioCount": 58,
+    "assertionCount": 171,
+    "passed": 58,
+    "failed": 0,
+    "durationMs": 90.274,
+    "cases": [
+      {
+        "id": "wrong-schema",
+        "title": "Unknown row fields are rejected",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: INVALID_SCHEMA; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: INVALID_SCHEMA; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.114
+      },
+      {
+        "id": "nonexistent-quote",
+        "title": "A fabricated quote cannot become evidence",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: QUOTE_MISMATCH; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: QUOTE_MISMATCH; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "QUOTE_MISMATCH",
+            "actual": "QUOTE_MISMATCH",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.223
+      },
+      {
+        "id": "embedded-instructions",
+        "title": "Embedded source instructions are refused",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: INJECTED_INSTRUCTIONS; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: INJECTED_INSTRUCTIONS; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "INJECTED_INSTRUCTIONS",
+            "actual": "INJECTED_INSTRUCTIONS",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.32
+      },
+      {
+        "id": "sensitive-patient-shaped",
+        "title": "Patient-shaped input is refused",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: SENSITIVE_DATA; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: SENSITIVE_DATA; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "SENSITIVE_DATA",
+            "actual": "SENSITIVE_DATA",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.354
+      },
+      {
+        "id": "unknown-taxonomy",
+        "title": "Unknown extraction taxonomy is refused",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: UNKNOWN_TAXONOMY; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: UNKNOWN_TAXONOMY; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "UNKNOWN_TAXONOMY",
+            "actual": "UNKNOWN_TAXONOMY",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.153
+      },
+      {
+        "id": "unsupported-assertion",
+        "title": "An invented extraction assertion is refused",
+        "category": "import safety",
+        "status": "passed",
+        "expected": "Preview refusal: UNSUPPORTED_ASSERTION; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "actual": "Preview refusal: UNSUPPORTED_ASSERTION; Atomic commit permission: false; Commit refusal: IMPORT_REJECTED; State unchanged: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview refusal",
+            "expected": "UNSUPPORTED_ASSERTION",
+            "actual": "UNSUPPORTED_ASSERTION",
+            "passed": true
+          },
+          {
+            "label": "Atomic commit permission",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit refusal",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.454
+      },
+      {
+        "id": "partial-invalid-atomic",
+        "title": "One invalid row refuses the entire mixed batch",
+        "category": "transactionality",
+        "status": "passed",
+        "expected": "Valid rows remain visible in preview: 1; Invalid rows remain visible in preview: 1; Mixed commit refused: IMPORT_REJECTED; No partial state write: true",
+        "actual": "Valid rows remain visible in preview: 1; Invalid rows remain visible in preview: 1; Mixed commit refused: IMPORT_REJECTED; No partial state write: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Valid rows remain visible in preview",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Invalid rows remain visible in preview",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Mixed commit refused",
+            "expected": "IMPORT_REJECTED",
+            "actual": "IMPORT_REJECTED",
+            "passed": true
+          },
+          {
+            "label": "No partial state write",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.513
+      },
+      {
+        "id": "duplicate-source",
+        "title": "Duplicate source identity counts once",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Stored sources: 1; Supporting evidence: 1; Duplicate count: 1; Independent evidence gate blocked: true",
+        "actual": "Stored sources: 1; Supporting evidence: 1; Duplicate count: 1; Independent evidence gate blocked: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Stored sources",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Supporting evidence",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Duplicate count",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Independent evidence gate blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.913
+      },
+      {
+        "id": "independent-sources",
+        "title": "Different source identities count as independent evidence",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Supporting source identities: 2; Independent evidence gate cleared: false",
+        "actual": "Supporting source identities: 2; Independent evidence gate cleared: false",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Supporting source identities",
+            "expected": "2",
+            "actual": "2",
+            "passed": true
+          },
+          {
+            "label": "Independent evidence gate cleared",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.487
+      },
+      {
+        "id": "relabelled-source-not-independent",
+        "title": "Re-identifying identical source text cannot manufacture independent evidence",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Independent supporting content: 1; Evidence gate remains blocked: true",
+        "actual": "Independent supporting content: 1; Evidence gate remains blocked: true",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Independent supporting content",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Evidence gate remains blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.345
+      },
+      {
+        "id": "extraction-kind-tamper",
+        "title": "Changing recorded source kind cannot relabel extraction provenance",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Tampered extraction cannot commit: false; No tampered evidence accepted: 0; Tamper rejection is visible: 1",
+        "actual": "Tampered extraction cannot commit: false; No tampered evidence accepted: 0; Tamper rejection is visible: 1",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Tampered extraction cannot commit",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "No tampered evidence accepted",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Tamper rejection is visible",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.085
+      },
+      {
+        "id": "extraction-confidence-tamper",
+        "title": "Changing recorded confidence cannot upgrade extraction certainty",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Tampered extraction cannot commit: false; No tampered evidence accepted: 0; Tamper rejection is visible: 1",
+        "actual": "Tampered extraction cannot commit: false; No tampered evidence accepted: 0; Tamper rejection is visible: 1",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Tampered extraction cannot commit",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "No tampered evidence accepted",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Tamper rejection is visible",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.038
+      },
+      {
+        "id": "source-conflict",
+        "title": "Conflicting content cannot reuse a source identity",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Conflict refusal: SOURCE_CONFLICT; Batch cannot commit: false",
+        "actual": "Conflict refusal: SOURCE_CONFLICT; Batch cannot commit: false",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Conflict refusal",
+            "expected": "SOURCE_CONFLICT",
+            "actual": "SOURCE_CONFLICT",
+            "passed": true
+          },
+          {
+            "label": "Batch cannot commit",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.095
+      },
+      {
+        "id": "ambiguous-source",
+        "title": "Ambiguous evidence remains visible and cannot support beta exit",
+        "category": "evidence provenance",
+        "status": "passed",
+        "expected": "Ambiguous rows preserved: 1; Supporting evidence excluded: 0; Evidence gate blocked: true",
+        "actual": "Ambiguous rows preserved: 1; Supporting evidence excluded: 0; Evidence gate blocked: true",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Ambiguous rows preserved",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Supporting evidence excluded",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Evidence gate blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.448
+      },
+      {
+        "id": "import-row-bound",
+        "title": "An oversized row batch is rejected before processing",
+        "category": "bounds",
+        "status": "passed",
+        "expected": "Row limit refusal: INVALID_SCHEMA",
+        "actual": "Row limit refusal: INVALID_SCHEMA",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "Row limit refusal",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.114
+      },
+      {
+        "id": "stale-preview",
+        "title": "A preview cannot commit against a later workspace revision",
+        "category": "transactionality",
+        "status": "passed",
+        "expected": "Old preview refusal: STALE_PREVIEW; No sources imported: 0",
+        "actual": "Old preview refusal: STALE_PREVIEW; No sources imported: 0",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Old preview refusal",
+            "expected": "STALE_PREVIEW",
+            "actual": "STALE_PREVIEW",
+            "passed": true
+          },
+          {
+            "label": "No sources imported",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.512
+      },
+      {
+        "id": "no-denominator",
+        "title": "A missing metric denominator blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.731
+      },
+      {
+        "id": "no-owner",
+        "title": "A feature without an owner blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.032
+      },
+      {
+        "id": "no-observation-window",
+        "title": "A missing observation window blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.004
+      },
+      {
+        "id": "insufficient-beta-sample",
+        "title": "A sample below 30 blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.034
+      },
+      {
+        "id": "incomplete-beta-window",
+        "title": "Fewer than seven observed days blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.888
+      },
+      {
+        "id": "low-beta-completion",
+        "title": "Completion below the fixed target blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.809
+      },
+      {
+        "id": "high-beta-errors",
+        "title": "Operational errors above the fixed target block beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 4.046
+      },
+      {
+        "id": "adverse-escalation",
+        "title": "Missing escalation ownership blocks beta approval",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.777
+      },
+      {
+        "id": "adverse-event-pause",
+        "title": "An adverse event blocks approval even with an escalation owner",
+        "category": "beta gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Beta approval refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Beta approval refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.928
+      },
+      {
+        "id": "inconsistent-beta-counts",
+        "title": "Rates that imply fractional observations are rejected",
+        "category": "measurement honesty",
+        "status": "passed",
+        "expected": "Fractional implied counts refused: INCONSISTENT_METRICS; Invalid beta evidence not stored: 0",
+        "actual": "Fractional implied counts refused: INCONSISTENT_METRICS; Invalid beta evidence not stored: 0",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Fractional implied counts refused",
+            "expected": "INCONSISTENT_METRICS",
+            "actual": "INCONSISTENT_METRICS",
+            "passed": true
+          },
+          {
+            "label": "Invalid beta evidence not stored",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.118
+      },
+      {
+        "id": "missing-security",
+        "title": "Missing security evidence blocks release signing",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release sign refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.042
+      },
+      {
+        "id": "missing-privacy",
+        "title": "Missing privacy evidence blocks release signing",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release sign refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.473
+      },
+      {
+        "id": "missing-rollback",
+        "title": "Missing rollback evidence blocks release signing",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release sign refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.656
+      },
+      {
+        "id": "missing-gtm",
+        "title": "Missing gtm evidence blocks release signing",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "actual": "Specific gate blocker: true; Release sign refusal: GATE_BLOCKED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Specific gate blocker",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release sign refusal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.492
+      },
+      {
+        "id": "failed-rollback-rehearsal",
+        "title": "A recorded unsuccessful rollback rehearsal blocks release signing",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Failed rehearsal preserved: false; Specific failure gate: true; Release refusal after failed rehearsal: GATE_BLOCKED",
+        "actual": "Failed rehearsal preserved: false; Specific failure gate: true; Release refusal after failed rehearsal: GATE_BLOCKED",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Failed rehearsal preserved",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Specific failure gate",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release refusal after failed rehearsal",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.778
+      },
+      {
+        "id": "rollback-result-required",
+        "title": "Rollback rehearsal requires an explicit successful result",
+        "category": "release gates",
+        "status": "passed",
+        "expected": "Missing rehearsal result refused: INVALID_SCHEMA; No inferred successful result: null",
+        "actual": "Missing rehearsal result refused: INVALID_SCHEMA; No inferred successful result: null",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Missing rehearsal result refused",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          },
+          {
+            "label": "No inferred successful result",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.057
+      },
+      {
+        "id": "stale-reviews-after-edit",
+        "title": "A scope edit invalidates approvals and release reviews",
+        "category": "version binding",
+        "status": "passed",
+        "expected": "Beta approval cleared: null; Reviews and signature cleared: [null,null,null,null,null]; Old approval cannot release edited scope: GATE_BLOCKED",
+        "actual": "Beta approval cleared: null; Reviews and signature cleared: [null,null,null,null,null]; Old approval cannot release edited scope: GATE_BLOCKED",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Beta approval cleared",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          },
+          {
+            "label": "Reviews and signature cleared",
+            "expected": "[null,null,null,null,null]",
+            "actual": "[null,null,null,null,null]",
+            "passed": true
+          },
+          {
+            "label": "Old approval cannot release edited scope",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.719
+      },
+      {
+        "id": "stale-beta-approval",
+        "title": "New beta evidence invalidates beta and release signatures",
+        "category": "version binding",
+        "status": "passed",
+        "expected": "Beta approval cleared: null; Release signature cleared: null; Reapproval required: GATE_BLOCKED",
+        "actual": "Beta approval cleared: null; Release signature cleared: null; Reapproval required: GATE_BLOCKED",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Beta approval cleared",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          },
+          {
+            "label": "Release signature cleared",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          },
+          {
+            "label": "Reapproval required",
+            "expected": "GATE_BLOCKED",
+            "actual": "GATE_BLOCKED",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.611
+      },
+      {
+        "id": "stale-mutation",
+        "title": "A stale mutation fails without changing state",
+        "category": "transactionality",
+        "status": "passed",
+        "expected": "Stale revision refusal: STALE_REVISION; State unchanged: true",
+        "actual": "Stale revision refusal: STALE_REVISION; State unchanged: true",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Stale revision refusal",
+            "expected": "STALE_REVISION",
+            "actual": "STALE_REVISION",
+            "passed": true
+          },
+          {
+            "label": "State unchanged",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.817
+      },
+      {
+        "id": "approval-idempotency",
+        "title": "Replaying identical approval returns its receipt without another audit write",
+        "category": "idempotency",
+        "status": "passed",
+        "expected": "Replay receipt: true; Revision unchanged: 4; Audit count unchanged: 5; Changed content cannot reuse key: IDEMPOTENCY_CONFLICT",
+        "actual": "Replay receipt: true; Revision unchanged: 4; Audit count unchanged: 5; Changed content cannot reuse key: IDEMPOTENCY_CONFLICT",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Replay receipt",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Revision unchanged",
+            "expected": "4",
+            "actual": "4",
+            "passed": true
+          },
+          {
+            "label": "Audit count unchanged",
+            "expected": "5",
+            "actual": "5",
+            "passed": true
+          },
+          {
+            "label": "Changed content cannot reuse key",
+            "expected": "IDEMPOTENCY_CONFLICT",
+            "actual": "IDEMPOTENCY_CONFLICT",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.769
+      },
+      {
+        "id": "duplicate-notification",
+        "title": "Duplicate notification identity creates one outbox entry",
+        "category": "outbox",
+        "status": "passed",
+        "expected": "Duplicate status: deduplicated; Outbox entries: 1",
+        "actual": "Duplicate status: deduplicated; Outbox entries: 1",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Duplicate status",
+            "expected": "deduplicated",
+            "actual": "deduplicated",
+            "passed": true
+          },
+          {
+            "label": "Outbox entries",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.292
+      },
+      {
+        "id": "suppressed-notification",
+        "title": "An opted-out audience remains suppressed during dispatch",
+        "category": "outbox",
+        "status": "passed",
+        "expected": "Suppression preserved: suppressed; Dispatch count: 0; External messages: 0",
+        "actual": "Suppression preserved: suppressed; Dispatch count: 0; External messages: 0",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Suppression preserved",
+            "expected": "suppressed",
+            "actual": "suppressed",
+            "passed": true
+          },
+          {
+            "label": "Dispatch count",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "External messages",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.513
+      },
+      {
+        "id": "notification-rate-limit",
+        "title": "The fourth distinct event is rate limited in the fixed window",
+        "category": "outbox",
+        "status": "passed",
+        "expected": "Simulated sends: 3; Rate limited entries: 1; External messages: 0; Repeated dispatch cannot exceed window: 0",
+        "actual": "Simulated sends: 3; Rate limited entries: 1; External messages: 0; Repeated dispatch cannot exceed window: 0",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Simulated sends",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          },
+          {
+            "label": "Rate limited entries",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "External messages",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Repeated dispatch cannot exceed window",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.886
+      },
+      {
+        "id": "health-failure-rollback",
+        "title": "Failed rollout health creates an owned rollback and blocks post-review",
+        "category": "rollback",
+        "status": "passed",
+        "expected": "Rollout paused: paused; Owned rollback required: required; Post-review blocked: true; Paused next actions require recovery, not a new rollout: [\"ROLLBACK_REQUIRED\"]; Later healthy check cannot bypass rollback: ROLLBACK_REQUIRED; Post-review before resolution refused: ROLLBACK_REQUIRED; Rollback resolved: rolled-back; Post-review recorded after resolution: true",
+        "actual": "Rollout paused: paused; Owned rollback required: required; Post-review blocked: true; Paused next actions require recovery, not a new rollout: [\"ROLLBACK_REQUIRED\"]; Later healthy check cannot bypass rollback: ROLLBACK_REQUIRED; Post-review before resolution refused: ROLLBACK_REQUIRED; Rollback resolved: rolled-back; Post-review recorded after resolution: true",
+        "assertionCount": 8,
+        "assertions": [
+          {
+            "label": "Rollout paused",
+            "expected": "paused",
+            "actual": "paused",
+            "passed": true
+          },
+          {
+            "label": "Owned rollback required",
+            "expected": "required",
+            "actual": "required",
+            "passed": true
+          },
+          {
+            "label": "Post-review blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Paused next actions require recovery, not a new rollout",
+            "expected": "[\"ROLLBACK_REQUIRED\"]",
+            "actual": "[\"ROLLBACK_REQUIRED\"]",
+            "passed": true
+          },
+          {
+            "label": "Later healthy check cannot bypass rollback",
+            "expected": "ROLLBACK_REQUIRED",
+            "actual": "ROLLBACK_REQUIRED",
+            "passed": true
+          },
+          {
+            "label": "Post-review before resolution refused",
+            "expected": "ROLLBACK_REQUIRED",
+            "actual": "ROLLBACK_REQUIRED",
+            "passed": true
+          },
+          {
+            "label": "Rollback resolved",
+            "expected": "rolled-back",
+            "actual": "rolled-back",
+            "passed": true
+          },
+          {
+            "label": "Post-review recorded after resolution",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.894
+      },
+      {
+        "id": "post-review-denominator",
+        "title": "A post-review denominator of zero cannot be recorded",
+        "category": "measurement honesty",
+        "status": "passed",
+        "expected": "Zero denominator refusal: INVALID_SCHEMA; No invalid post-review stored: null",
+        "actual": "Zero denominator refusal: INVALID_SCHEMA; No invalid post-review stored: null",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Zero denominator refusal",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          },
+          {
+            "label": "No invalid post-review stored",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.012
+      },
+      {
+        "id": "post-review-numerator",
+        "title": "Post-review completions cannot exceed attempted setups",
+        "category": "measurement honesty",
+        "status": "passed",
+        "expected": "Numerator above denominator refused: INCONSISTENT_METRICS; No impossible post-review stored: null",
+        "actual": "Numerator above denominator refused: INCONSISTENT_METRICS; No impossible post-review stored: null",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Numerator above denominator refused",
+            "expected": "INCONSISTENT_METRICS",
+            "actual": "INCONSISTENT_METRICS",
+            "passed": true
+          },
+          {
+            "label": "No impossible post-review stored",
+            "expected": "null",
+            "actual": "null",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.034
+      },
+      {
+        "id": "paused-feature-edit",
+        "title": "Editing feature scope cannot erase a failed-health rollback",
+        "category": "rollback obligation",
+        "status": "passed",
+        "expected": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "actual": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Rollback remains required",
+            "expected": "required",
+            "actual": "required",
+            "passed": true
+          },
+          {
+            "label": "Rollout remains paused",
+            "expected": "paused",
+            "actual": "paused",
+            "passed": true
+          },
+          {
+            "label": "Post-review remains blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.137
+      },
+      {
+        "id": "paused-beta-edit",
+        "title": "Replacing beta evidence cannot erase a failed-health rollback",
+        "category": "rollback obligation",
+        "status": "passed",
+        "expected": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "actual": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Rollback remains required",
+            "expected": "required",
+            "actual": "required",
+            "passed": true
+          },
+          {
+            "label": "Rollout remains paused",
+            "expected": "paused",
+            "actual": "paused",
+            "passed": true
+          },
+          {
+            "label": "Post-review remains blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.96
+      },
+      {
+        "id": "paused-review-edit",
+        "title": "Recording another review cannot erase a failed-health rollback",
+        "category": "rollback obligation",
+        "status": "passed",
+        "expected": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "actual": "Rollback remains required: required; Rollout remains paused: paused; Post-review remains blocked: true",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Rollback remains required",
+            "expected": "required",
+            "actual": "required",
+            "passed": true
+          },
+          {
+            "label": "Rollout remains paused",
+            "expected": "paused",
+            "actual": "paused",
+            "passed": true
+          },
+          {
+            "label": "Post-review remains blocked",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.727
+      },
+      {
+        "id": "rollback-postreview-obligation",
+        "title": "A resolved rollback requires post-review before new scoped release work",
+        "category": "rollback obligation",
+        "status": "passed",
+        "expected": "Scope edit cannot skip rollback review: 12; Rollback outcome preserved: rolled-back",
+        "actual": "Scope edit cannot skip rollback review: 12; Rollback outcome preserved: rolled-back",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Scope edit cannot skip rollback review",
+            "expected": "12",
+            "actual": "12",
+            "passed": true
+          },
+          {
+            "label": "Rollback outcome preserved",
+            "expected": "rolled-back",
+            "actual": "rolled-back",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.596
+      },
+      {
+        "id": "released-postreview-obligation",
+        "title": "A released rollout cannot lose its outcome before post-review",
+        "category": "rollback obligation",
+        "status": "passed",
+        "expected": "Beta replacement requires review first: POST_REVIEW_REQUIRED; Revision unchanged: 11; Rollout outcome preserved: released; Health observation preserved: true",
+        "actual": "Beta replacement requires review first: POST_REVIEW_REQUIRED; Revision unchanged: 11; Rollout outcome preserved: released; Health observation preserved: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Beta replacement requires review first",
+            "expected": "POST_REVIEW_REQUIRED",
+            "actual": "POST_REVIEW_REQUIRED",
+            "passed": true
+          },
+          {
+            "label": "Revision unchanged",
+            "expected": "11",
+            "actual": "11",
+            "passed": true
+          },
+          {
+            "label": "Rollout outcome preserved",
+            "expected": "released",
+            "actual": "released",
+            "passed": true
+          },
+          {
+            "label": "Health observation preserved",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.387
+      },
+      {
+        "id": "reviewed-new-cycle",
+        "title": "A reviewed outcome can start a newly scoped synthetic release cycle",
+        "category": "happy path",
+        "status": "passed",
+        "expected": "New beta evidence version: 2; Fresh release draft: draft; Historical review remains in audit: true; Exactly one new audit write: 14",
+        "actual": "New beta evidence version: 2; Fresh release draft: draft; Historical review remains in audit: true; Exactly one new audit write: 14",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "New beta evidence version",
+            "expected": "2",
+            "actual": "2",
+            "passed": true
+          },
+          {
+            "label": "Fresh release draft",
+            "expected": "draft",
+            "actual": "draft",
+            "passed": true
+          },
+          {
+            "label": "Historical review remains in audit",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Exactly one new audit write",
+            "expected": "14",
+            "actual": "14",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.451
+      },
+      {
+        "id": "happy-lifecycle",
+        "title": "Verified evidence proceeds through beta, release, health and review",
+        "category": "happy path",
+        "status": "passed",
+        "expected": "Simulated rollout recorded: released; Post-review retained: true; Missing baseline is explicit: missing; Impact claim withheld: true; No notification delivered externally: true",
+        "actual": "Simulated rollout recorded: released; Post-review retained: true; Missing baseline is explicit: missing; Impact claim withheld: true; No notification delivered externally: true",
+        "assertionCount": 5,
+        "assertions": [
+          {
+            "label": "Simulated rollout recorded",
+            "expected": "released",
+            "actual": "released",
+            "passed": true
+          },
+          {
+            "label": "Post-review retained",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Missing baseline is explicit",
+            "expected": "missing",
+            "actual": "missing",
+            "passed": true
+          },
+          {
+            "label": "Impact claim withheld",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "No notification delivered externally",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.407
+      },
+      {
+        "id": "export-audit-consistency",
+        "title": "Export preserves audit consistency and omits private receipts",
+        "category": "audit",
+        "status": "passed",
+        "expected": "Export revision matches state: 3; Last audit revision matches state: 3; Audit entry count: 4; Audit consistency: true; Private receipts omitted: false; Session identifiers omitted: false",
+        "actual": "Export revision matches state: 3; Last audit revision matches state: 3; Audit entry count: 4; Audit consistency: true; Private receipts omitted: false; Session identifiers omitted: false",
+        "assertionCount": 6,
+        "assertions": [
+          {
+            "label": "Export revision matches state",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          },
+          {
+            "label": "Last audit revision matches state",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          },
+          {
+            "label": "Audit entry count",
+            "expected": "4",
+            "actual": "4",
+            "passed": true
+          },
+          {
+            "label": "Audit consistency",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Private receipts omitted",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Session identifiers omitted",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.857
+      },
+      {
+        "id": "guidance-initial-feedback",
+        "title": "A fresh workspace routes to feedback import",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"feedback\",\"feedback\",\"importRows\"]; Next decision requests independent evidence: true",
+        "actual": "Authoritative phase, view and action: [\"feedback\",\"feedback\",\"importRows\"]; Next decision requests independent evidence: true",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"feedback\",\"feedback\",\"importRows\"]",
+            "actual": "[\"feedback\",\"feedback\",\"importRows\"]",
+            "passed": true
+          },
+          {
+            "label": "Next decision requests independent evidence",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.233
+      },
+      {
+        "id": "guidance-beta-approval",
+        "title": "Passing beta evidence routes to current-version approval",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"beta-approval\",\"release\",\"approveBeta\"]; Beta thresholds ready: true; Release still requires approval: false",
+        "actual": "Authoritative phase, view and action: [\"beta-approval\",\"release\",\"approveBeta\"]; Beta thresholds ready: true; Release still requires approval: false",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"beta-approval\",\"release\",\"approveBeta\"]",
+            "actual": "[\"beta-approval\",\"release\",\"approveBeta\"]",
+            "passed": true
+          },
+          {
+            "label": "Beta thresholds ready",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Release still requires approval",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 0.992
+      },
+      {
+        "id": "guidance-signed-release",
+        "title": "Signed current evidence routes to simulated rollout",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"release\",\"release\",\"simulateRelease\"]; Current release is ready: true",
+        "actual": "Authoritative phase, view and action: [\"release\",\"release\",\"simulateRelease\"]; Current release is ready: true",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"release\",\"release\",\"simulateRelease\"]",
+            "actual": "[\"release\",\"release\",\"simulateRelease\"]",
+            "passed": true
+          },
+          {
+            "label": "Current release is ready",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.642
+      },
+      {
+        "id": "guidance-awaiting-health",
+        "title": "A completed rollout routes to health instead of repeating release",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"health\",\"health\",\"recordHealth\"]; Completed rollout cannot release again: false; Rollout review requirement visible: true; Next decision requests health: true",
+        "actual": "Authoritative phase, view and action: [\"health\",\"health\",\"recordHealth\"]; Completed rollout cannot release again: false; Rollout review requirement visible: true; Next decision requests health: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"health\",\"health\",\"recordHealth\"]",
+            "actual": "[\"health\",\"health\",\"recordHealth\"]",
+            "passed": true
+          },
+          {
+            "label": "Completed rollout cannot release again",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Rollout review requirement visible",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Next decision requests health",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 1.992
+      },
+      {
+        "id": "guidance-healthy-postreview",
+        "title": "A healthy rollout routes to outcome review",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"post-review\",\"review\",\"postReview\"]; Outcome review is available: true; Completed rollout cannot release again: false; Repeat rollout refused: POST_REVIEW_REQUIRED",
+        "actual": "Authoritative phase, view and action: [\"post-review\",\"review\",\"postReview\"]; Outcome review is available: true; Completed rollout cannot release again: false; Repeat rollout refused: POST_REVIEW_REQUIRED",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"post-review\",\"review\",\"postReview\"]",
+            "actual": "[\"post-review\",\"review\",\"postReview\"]",
+            "passed": true
+          },
+          {
+            "label": "Outcome review is available",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Completed rollout cannot release again",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Repeat rollout refused",
+            "expected": "POST_REVIEW_REQUIRED",
+            "actual": "POST_REVIEW_REQUIRED",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.449
+      },
+      {
+        "id": "guidance-owned-rollback",
+        "title": "Failed health routes to the named rollback owner",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"rollback\",\"health\",\"resolveRollback\"]; Rollback owner leads next decision: true; Decision requests owned rollback: true",
+        "actual": "Authoritative phase, view and action: [\"rollback\",\"health\",\"resolveRollback\"]; Rollback owner leads next decision: true; Decision requests owned rollback: true",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"rollback\",\"health\",\"resolveRollback\"]",
+            "actual": "[\"rollback\",\"health\",\"resolveRollback\"]",
+            "passed": true
+          },
+          {
+            "label": "Rollback owner leads next decision",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Decision requests owned rollback",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.882
+      },
+      {
+        "id": "guidance-resolved-rollback",
+        "title": "A resolved rollback routes to post-review before new scope",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"post-review\",\"review\",\"postReview\"]; Outcome review is available: true; Old rollout cannot be retried: false",
+        "actual": "Authoritative phase, view and action: [\"post-review\",\"review\",\"postReview\"]; Outcome review is available: true; Old rollout cannot be retried: false",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"post-review\",\"review\",\"postReview\"]",
+            "actual": "[\"post-review\",\"review\",\"postReview\"]",
+            "passed": true
+          },
+          {
+            "label": "Outcome review is available",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Old rollout cannot be retried",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.863
+      },
+      {
+        "id": "guidance-reviewed-next-cycle",
+        "title": "A reviewed outcome requests baseline review and new scoped work",
+        "category": "lifecycle guidance",
+        "status": "passed",
+        "expected": "Authoritative phase, view and action: [\"outcome-review\",\"review\",\"weeklyReview\"]; New scope requirement visible: true; Old release remains unavailable: false; Next decision requests new scoped work: true",
+        "actual": "Authoritative phase, view and action: [\"outcome-review\",\"review\",\"weeklyReview\"]; New scope requirement visible: true; Old release remains unavailable: false; Next decision requests new scoped work: true",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Authoritative phase, view and action",
+            "expected": "[\"outcome-review\",\"review\",\"weeklyReview\"]",
+            "actual": "[\"outcome-review\",\"review\",\"weeklyReview\"]",
+            "passed": true
+          },
+          {
+            "label": "New scope requirement visible",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Old release remains unavailable",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Next decision requests new scoped work",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.119
+      }
+    ]
+  },
+  "injectedFaults": {
+    "scenarioCount": 3,
+    "assertionCount": 4,
+    "passed": 0,
+    "failed": 3,
+    "durationMs": 2.115,
+    "cases": [
+      {
+        "id": "fault-missing-privacy",
+        "title": "Injected missing-privacy release bypass is detected",
+        "category": "intentional rule fault",
+        "status": "failed",
+        "expected": "Missing privacy must refuse signing: GATE_BLOCKED",
+        "actual": "Missing privacy must refuse signing: ready",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "Missing privacy must refuse signing",
+            "expected": "GATE_BLOCKED",
+            "actual": "ready",
+            "passed": false
+          }
+        ],
+        "durationMs": 1.745,
+        "injectedFault": "Catch GATE_BLOCKED and force a ready result for missing privacy."
+      },
+      {
+        "id": "fault-fabricated-quote",
+        "title": "Injected quote-validation bypass is detected",
+        "category": "intentional rule fault",
+        "status": "failed",
+        "expected": "Fabricated quote must be rejected: QUOTE_MISMATCH; Invalid batch cannot commit: false",
+        "actual": "Fabricated quote must be rejected: accepted; Invalid batch cannot commit: true",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Fabricated quote must be rejected",
+            "expected": "QUOTE_MISMATCH",
+            "actual": "accepted",
+            "passed": false
+          },
+          {
+            "label": "Invalid batch cannot commit",
+            "expected": "false",
+            "actual": "true",
+            "passed": false
+          }
+        ],
+        "durationMs": 0.127,
+        "injectedFault": "Replace failed quote validation with acceptance in an isolated preview adapter."
+      },
+      {
+        "id": "fault-duplicate-outbox",
+        "title": "Injected notification-dedupe bypass is detected",
+        "category": "intentional rule fault",
+        "status": "failed",
+        "expected": "Duplicate identity must retain one entry: 1",
+        "actual": "Duplicate identity must retain one entry: 2",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "Duplicate identity must retain one entry",
+            "expected": "1",
+            "actual": "2",
+            "passed": false
+          }
+        ],
+        "durationMs": 0.243,
+        "injectedFault": "Append a duplicate outbox record after the shared dedupe rule executes."
+      }
+    ],
+    "detected": 3,
+    "missed": 0
+  },
+  "durationMs": 93.039,
+  "integration": {
+    "generatedAt": "2026-10-13T08:54:31.922Z",
+    "environment": "Isolated local Worker and SQLite persistence integration",
+    "scenarioCount": 31,
+    "assertionCount": 83,
+    "passed": 31,
+    "failed": 0,
+    "durationMs": 4590.376,
+    "cases": [
+      {
+        "id": "http-static-security-headers",
+        "title": "Static asset responses receive Worker security headers",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 200; MIME sniffing disabled: nosniff; CSP limits scripts to self: true; Framing disabled: DENY",
+        "actual": "HTTP status: 200; MIME sniffing disabled: nosniff; CSP limits scripts to self: true; Framing disabled: DENY",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "MIME sniffing disabled",
+            "expected": "nosniff",
+            "actual": "nosniff",
+            "passed": true
+          },
+          {
+            "label": "CSP limits scripts to self",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Framing disabled",
+            "expected": "DENY",
+            "actual": "DENY",
+            "passed": true
+          }
+        ],
+        "durationMs": 167.676
+      },
+      {
+        "id": "http-origin-missing",
+        "title": "Session creation requires an explicit matching Origin",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 403; Refusal code: FORBIDDEN_ORIGIN",
+        "actual": "HTTP status: 403; Refusal code: FORBIDDEN_ORIGIN",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "403",
+            "actual": "403",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "FORBIDDEN_ORIGIN",
+            "actual": "FORBIDDEN_ORIGIN",
+            "passed": true
+          }
+        ],
+        "durationMs": 9.982
+      },
+      {
+        "id": "http-hostile-origin",
+        "title": "A hostile origin cannot create a visitor session",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 403",
+        "actual": "HTTP status: 403",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "403",
+            "actual": "403",
+            "passed": true
+          }
+        ],
+        "durationMs": 7.911
+      },
+      {
+        "id": "http-host-mismatch",
+        "title": "A destination outside configured origin is refused",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 403",
+        "actual": "HTTP status: 403",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "403",
+            "actual": "403",
+            "passed": true
+          }
+        ],
+        "durationMs": 4.281
+      },
+      {
+        "id": "http-session-cookie",
+        "title": "Each visitor receives an opaque restricted cookie",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Distinct opaque cookies: true; Cookie HttpOnly: true; Cookie SameSite: true; Initial fixed simulation time: 2026-10-13T09:00:00.000Z; Receipts absent from public state: false",
+        "actual": "Distinct opaque cookies: true; Cookie HttpOnly: true; Cookie SameSite: true; Initial fixed simulation time: 2026-10-13T09:00:00.000Z; Receipts absent from public state: false",
+        "assertionCount": 5,
+        "assertions": [
+          {
+            "label": "Distinct opaque cookies",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Cookie HttpOnly",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Cookie SameSite",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Initial fixed simulation time",
+            "expected": "2026-10-13T09:00:00.000Z",
+            "actual": "2026-10-13T09:00:00.000Z",
+            "passed": true
+          },
+          {
+            "label": "Receipts absent from public state",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          }
+        ],
+        "durationMs": 11.858
+      },
+      {
+        "id": "http-no-session",
+        "title": "Reads require a visitor session cookie",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 401",
+        "actual": "HTTP status: 401",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "401",
+            "actual": "401",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.275
+      },
+      {
+        "id": "http-forged-session",
+        "title": "A syntactically valid forged cookie has no workspace",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 401",
+        "actual": "HTTP status: 401",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "401",
+            "actual": "401",
+            "passed": true
+          }
+        ],
+        "durationMs": 4.066
+      },
+      {
+        "id": "http-duplicate-cookie",
+        "title": "Duplicate session cookies are refused",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 401",
+        "actual": "HTTP status: 401",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "401",
+            "actual": "401",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.351
+      },
+      {
+        "id": "http-cross-site-read",
+        "title": "Browser cross-site reads are refused",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 403",
+        "actual": "HTTP status: 403",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "403",
+            "actual": "403",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.572
+      },
+      {
+        "id": "http-query-rejected",
+        "title": "Unsupported API query parameters are refused",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+        "actual": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "400",
+            "actual": "400",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.051
+      },
+      {
+        "id": "http-method-rejected",
+        "title": "Unsupported methods cannot mutate state",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 405",
+        "actual": "HTTP status: 405",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "405",
+            "actual": "405",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.435
+      },
+      {
+        "id": "http-content-type",
+        "title": "Non-JSON command bodies are refused",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 400",
+        "actual": "HTTP status: 400",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "400",
+            "actual": "400",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.796
+      },
+      {
+        "id": "http-invalid-json",
+        "title": "Malformed JSON is refused before command execution",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+        "actual": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "400",
+            "actual": "400",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "INVALID_SCHEMA",
+            "actual": "INVALID_SCHEMA",
+            "passed": true
+          }
+        ],
+        "durationMs": 2.611
+      },
+      {
+        "id": "http-stream-size-bound",
+        "title": "Actual body size is bounded without Content-Length",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 413; Refusal code: BODY_TOO_LARGE",
+        "actual": "HTTP status: 413; Refusal code: BODY_TOO_LARGE",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "413",
+            "actual": "413",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "BODY_TOO_LARGE",
+            "actual": "BODY_TOO_LARGE",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.373
+      },
+      {
+        "id": "http-command-contract",
+        "title": "Commands require revision and idempotency key",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 400",
+        "actual": "HTTP status: 400",
+        "assertionCount": 1,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "400",
+            "actual": "400",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.685
+      },
+      {
+        "id": "http-preview-required",
+        "title": "Import cannot bypass an exact server-issued preview",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 409; Refusal code: STALE_PREVIEW; No imported rows: 0",
+        "actual": "HTTP status: 409; Refusal code: STALE_PREVIEW; No imported rows: 0",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "409",
+            "actual": "409",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "STALE_PREVIEW",
+            "actual": "STALE_PREVIEW",
+            "passed": true
+          },
+          {
+            "label": "No imported rows",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 4.045
+      },
+      {
+        "id": "http-preview-import",
+        "title": "Preview and commit persist verified evidence transactionally",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Preview HTTP status: 200; Preview permission: true; Commit HTTP status: 200; Source rows persisted: 4; Revision: 1",
+        "actual": "Preview HTTP status: 200; Preview permission: true; Commit HTTP status: 200; Source rows persisted: 4; Revision: 1",
+        "assertionCount": 5,
+        "assertions": [
+          {
+            "label": "Preview HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Preview permission",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Commit HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Source rows persisted",
+            "expected": "4",
+            "actual": "4",
+            "passed": true
+          },
+          {
+            "label": "Revision",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          }
+        ],
+        "durationMs": 12.3
+      },
+      {
+        "id": "http-import-receipt-replay",
+        "title": "An identical import replay preserves revision and audit count",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 200; Receipt replay: true; No new revision: 1; No new audit entry: 2",
+        "actual": "HTTP status: 200; Receipt replay: true; No new revision: 1; No new audit entry: 2",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Receipt replay",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "No new revision",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "No new audit entry",
+            "expected": "2",
+            "actual": "2",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.934
+      },
+      {
+        "id": "http-content-bound-receipt",
+        "title": "An idempotency key cannot apply different content",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 409; Refusal code: IDEMPOTENCY_CONFLICT",
+        "actual": "HTTP status: 409; Refusal code: IDEMPOTENCY_CONFLICT",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "409",
+            "actual": "409",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "IDEMPOTENCY_CONFLICT",
+            "actual": "IDEMPOTENCY_CONFLICT",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.225
+      },
+      {
+        "id": "http-reload-and-isolation",
+        "title": "Reload retains one visitor state while another remains empty",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Reload source count: 4; Reload revision: 1; Other visitor source count: 0; Other visitor revision: 0",
+        "actual": "Reload source count: 4; Reload revision: 1; Other visitor source count: 0; Other visitor revision: 0",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Reload source count",
+            "expected": "4",
+            "actual": "4",
+            "passed": true
+          },
+          {
+            "label": "Reload revision",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Other visitor source count",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Other visitor revision",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 6.79
+      },
+      {
+        "id": "http-atomic-invalid-import",
+        "title": "A partially invalid preview cannot write any source rows",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Preview blocked: false; Commit HTTP status: 409; Atomic source count: 0; Atomic revision: 0",
+        "actual": "Preview blocked: false; Commit HTTP status: 409; Atomic source count: 0; Atomic revision: 0",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Preview blocked",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Commit HTTP status",
+            "expected": "409",
+            "actual": "409",
+            "passed": true
+          },
+          {
+            "label": "Atomic source count",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Atomic revision",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          }
+        ],
+        "durationMs": 9.268
+      },
+      {
+        "id": "http-stale-mutation",
+        "title": "Stale commands cannot create audit or state writes",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 409; Refusal code: STALE_REVISION; Revision unchanged: 1; Audit count unchanged: 2",
+        "actual": "HTTP status: 409; Refusal code: STALE_REVISION; Revision unchanged: 1; Audit count unchanged: 2",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "409",
+            "actual": "409",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "STALE_REVISION",
+            "actual": "STALE_REVISION",
+            "passed": true
+          },
+          {
+            "label": "Revision unchanged",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Audit count unchanged",
+            "expected": "2",
+            "actual": "2",
+            "passed": true
+          }
+        ],
+        "durationMs": 5.01
+      },
+      {
+        "id": "http-concurrent-identical",
+        "title": "Concurrent identical commands share a single transactional receipt",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Both replay-safe responses: [200,200]; Exactly one replay: 1; One committed revision: 1",
+        "actual": "Both replay-safe responses: [200,200]; Exactly one replay: 1; One committed revision: 1",
+        "assertionCount": 3,
+        "assertions": [
+          {
+            "label": "Both replay-safe responses",
+            "expected": "[200,200]",
+            "actual": "[200,200]",
+            "passed": true
+          },
+          {
+            "label": "Exactly one replay",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "One committed revision",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          }
+        ],
+        "durationMs": 5.468
+      },
+      {
+        "id": "http-concurrent-conflict",
+        "title": "Concurrent different commands allow only one mutation at a revision",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "One commit and one stale response: [200,409]; Only one new revision: 3",
+        "actual": "One commit and one stale response: [200,409]; Only one new revision: 3",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "One commit and one stale response",
+            "expected": "[200,409]",
+            "actual": "[200,409]",
+            "passed": true
+          },
+          {
+            "label": "Only one new revision",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          }
+        ],
+        "durationMs": 6.243
+      },
+      {
+        "id": "http-export-consistency",
+        "title": "Export agrees with persisted audit and excludes receipts",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 200; Audit consistent: true; Last audit revision: 3; Receipts excluded: false; Download attachment: true; Cache disabled: no-store",
+        "actual": "HTTP status: 200; Audit consistent: true; Last audit revision: 3; Receipts excluded: false; Download attachment: true; Cache disabled: no-store",
+        "assertionCount": 6,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Audit consistent",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Last audit revision",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          },
+          {
+            "label": "Receipts excluded",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "Download attachment",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Cache disabled",
+            "expected": "no-store",
+            "actual": "no-store",
+            "passed": true
+          }
+        ],
+        "durationMs": 3.011
+      },
+      {
+        "id": "http-live-evaluation",
+        "title": "Live evaluation executes isolated rules without mutating visitor workflow",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "HTTP status: 200; Executed at least 20 scenarios: true; Baseline failures: 0; Injected faults detected: 3; Workflow revision unchanged: 3",
+        "actual": "HTTP status: 200; Executed at least 20 scenarios: true; Baseline failures: 0; Injected faults detected: 3; Workflow revision unchanged: 3",
+        "assertionCount": 5,
+        "assertions": [
+          {
+            "label": "HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Executed at least 20 scenarios",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Baseline failures",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Injected faults detected",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          },
+          {
+            "label": "Workflow revision unchanged",
+            "expected": "3",
+            "actual": "3",
+            "passed": true
+          }
+        ],
+        "durationMs": 92.646
+      },
+      {
+        "id": "http-evaluation-bound",
+        "title": "Evaluation requests stop after ten visitor runs",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Eleventh evaluation status: 429; Refusal code: RATE_LIMITED",
+        "actual": "Eleventh evaluation status: 429; Refusal code: RATE_LIMITED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Eleventh evaluation status",
+            "expected": "429",
+            "actual": "429",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "RATE_LIMITED",
+            "actual": "RATE_LIMITED",
+            "passed": true
+          }
+        ],
+        "durationMs": 603.422
+      },
+      {
+        "id": "http-request-bound",
+        "title": "Visitor request bursts are bounded by the server",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Bounded burst status: 429; Refusal code: RATE_LIMITED",
+        "actual": "Bounded burst status: 429; Refusal code: RATE_LIMITED",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Bounded burst status",
+            "expected": "429",
+            "actual": "429",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "RATE_LIMITED",
+            "actual": "RATE_LIMITED",
+            "passed": true
+          }
+        ],
+        "durationMs": 168.078
+      },
+      {
+        "id": "http-invalid-request-bound",
+        "title": "Invalid domain commands count toward request limits without audit mutations",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Workflow revision after ten invalid commands: 0; Audit after ten invalid commands: 1; Invalid request burst status: 429; Refusal code: RATE_LIMITED",
+        "actual": "Workflow revision after ten invalid commands: 0; Audit after ten invalid commands: 1; Invalid request burst status: 429; Refusal code: RATE_LIMITED",
+        "assertionCount": 4,
+        "assertions": [
+          {
+            "label": "Workflow revision after ten invalid commands",
+            "expected": "0",
+            "actual": "0",
+            "passed": true
+          },
+          {
+            "label": "Audit after ten invalid commands",
+            "expected": "1",
+            "actual": "1",
+            "passed": true
+          },
+          {
+            "label": "Invalid request burst status",
+            "expected": "429",
+            "actual": "429",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "RATE_LIMITED",
+            "actual": "RATE_LIMITED",
+            "passed": true
+          }
+        ],
+        "durationMs": 257
+      },
+      {
+        "id": "http-public-fail-closed",
+        "title": "Public-mode API refuses sessions without configured rate protection",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Unprovisioned API status: 503; Refusal code: RATE_LIMIT_UNAVAILABLE",
+        "actual": "Unprovisioned API status: 503; Refusal code: RATE_LIMIT_UNAVAILABLE",
+        "assertionCount": 2,
+        "assertions": [
+          {
+            "label": "Unprovisioned API status",
+            "expected": "503",
+            "actual": "503",
+            "passed": true
+          },
+          {
+            "label": "Refusal code",
+            "expected": "RATE_LIMIT_UNAVAILABLE",
+            "actual": "RATE_LIMIT_UNAVAILABLE",
+            "passed": true
+          }
+        ],
+        "durationMs": 81.584
+      },
+      {
+        "id": "http-secure-cookie-policy",
+        "title": "Provisioned HTTPS mode uses a Secure host-only session cookie",
+        "category": "Worker integration",
+        "status": "passed",
+        "expected": "Provisioned session HTTP status: 200; Host-prefixed cookie: true; Secure attribute: true; No Domain attribute: false; HttpOnly attribute: true",
+        "actual": "Provisioned session HTTP status: 200; Host-prefixed cookie: true; Secure attribute: true; No Domain attribute: false; HttpOnly attribute: true",
+        "assertionCount": 5,
+        "assertions": [
+          {
+            "label": "Provisioned session HTTP status",
+            "expected": "200",
+            "actual": "200",
+            "passed": true
+          },
+          {
+            "label": "Host-prefixed cookie",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "Secure attribute",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          },
+          {
+            "label": "No Domain attribute",
+            "expected": "false",
+            "actual": "false",
+            "passed": true
+          },
+          {
+            "label": "HttpOnly attribute",
+            "expected": "true",
+            "actual": "true",
+            "passed": true
+          }
+        ],
+        "durationMs": 3096.429
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "feedback-release-proof",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ayo Ahmed - Independent concept. Synthetic product-operations evidence and release workbench.",
+  "scripts": {
+    "dev": "WRANGLER_SEND_METRICS=false XDG_CONFIG_HOME=work/tool-config WRANGLER_LOG_PATH=work/logs wrangler dev --ip 127.0.0.1 --port 8787 --var LOCAL_DEV:true --var APP_ORIGIN:http://127.0.0.1:8787",
+    "test": "node scripts/eval.mjs",
+    "test:integration": "node tests/integration.mjs",
+    "test:browser": "node scripts/browser-check.mjs",
+    "build": "WRANGLER_SEND_METRICS=false XDG_CONFIG_HOME=work/tool-config WRANGLER_LOG_PATH=work/logs wrangler deploy --dry-run --outdir work/build",
+    "deploy": "node scripts/deploy-approved.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.2",
+    "miniflare": "^4.0.0",
+    "playwright": "^1.56.0",
+    "wrangler": "^4.0.0"
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "format": "feedback-release-proof-synthetic-v1",
+  "exportedAt": "2026-10-13T09:16:00.000Z",
+  "attribution": {
+    "name": "Feedback → Release Proof",
+    "credit": "Ayo Ahmed - Independent concept",
+    "context": "Independent concept for Semble",
+    "disclaimer": "Unofficial. Synthetic operational data only. Not connected to Semble. Not a clinical system or compliance certification."
+  },
+  "snapshot": {
+    "schemaVersion": 1,
+    "revision": 16,
+    "simulationTime": "2026-10-13T09:00:00.000Z",
+    "project": {
+      "name": "Feedback → Release Proof",
+      "credit": "Ayo Ahmed - Independent concept",
+      "context": "Independent concept for Semble",
+      "disclaimer": "Unofficial. Synthetic operational data only. Not connected to Semble. Not a clinical system or compliance certification."
+    },
+    "features": [
+      {
+        "id": "reminder",
+        "title": "Simpler reminder setup",
+        "owner": "Synthetic Product owner",
+        "hypothesis": "A clearer setup flow will reduce administrative effort for synthetic teams.",
+        "metric": "Successful reminder setup rate",
+        "denominator": "All attempted reminder setups in the synthetic beta cohort",
+        "target": "At least 90% completion; at most 1% operational errors",
+        "observationWindow": "Seven full synthetic days after cohort enrolment",
+        "contentVersion": 1,
+        "priority": {
+          "owner": "Synthetic Product owner",
+          "contentVersion": 1,
+          "at": "2026-10-13T09:02:00.000Z",
+          "simulated": true,
+          "rationale": "Prioritise reminder setup clarity based on independent synthetic support and interview signals; clarify ambiguous scope separately.",
+          "evidenceIds": [
+            "evidence-syn-support-01",
+            "evidence-syn-interview-02",
+            "evidence-syn-usage-03",
+            "evidence-syn-sales-04"
+          ]
+        }
+      }
+    ],
+    "opportunities": [
+      {
+        "id": "opp-reminder",
+        "featureId": "reminder",
+        "title": "Simpler reminder setup",
+        "sourceCount": 4,
+        "evidenceIds": [
+          "evidence-syn-support-01",
+          "evidence-syn-interview-02",
+          "evidence-syn-usage-03",
+          "evidence-syn-sales-04"
+        ],
+        "ambiguityCount": 1,
+        "score": 80,
+        "scoreExplanation": "20 points per independent supporting source, capped at 100; a human owns priority.",
+        "decision": "human-prioritized",
+        "synthetic": true
+      }
+    ],
+    "sources": [
+      {
+        "sourceId": "syn-support-01",
+        "kind": "support",
+        "synthetic": true,
+        "text": "Synthetic team A: reminder setup takes too many steps.",
+        "extraction": {
+          "theme": "workflow",
+          "featureId": "reminder",
+          "quote": "reminder setup takes too many steps",
+          "start": 18,
+          "end": 53,
+          "assertion": "reduce-reminder-steps",
+          "confidence": 0.94
+        }
+      },
+      {
+        "sourceId": "syn-interview-02",
+        "kind": "interview",
+        "synthetic": true,
+        "text": "Synthetic team B: reminder setup takes too many steps.",
+        "extraction": {
+          "theme": "workflow",
+          "featureId": "reminder",
+          "quote": "reminder setup takes too many steps",
+          "start": 18,
+          "end": 53,
+          "assertion": "reduce-reminder-steps",
+          "confidence": 0.91
+        }
+      },
+      {
+        "sourceId": "syn-usage-03",
+        "kind": "usage",
+        "synthetic": true,
+        "text": "Synthetic team C: reminder status is hard to find.",
+        "extraction": {
+          "theme": "reliability",
+          "featureId": "reminder",
+          "quote": "reminder status is hard to find",
+          "start": 18,
+          "end": 49,
+          "assertion": "surface-reminder-status",
+          "confidence": 0.89
+        }
+      },
+      {
+        "sourceId": "syn-sales-04",
+        "kind": "sales",
+        "synthetic": true,
+        "text": "Synthetic team D: reminder labels need clearer wording.",
+        "extraction": {
+          "theme": "accessibility",
+          "featureId": "reminder",
+          "quote": "reminder labels need clearer wording",
+          "start": 18,
+          "end": 54,
+          "assertion": "clarify-reminder-labels",
+          "confidence": 0.88
+        }
+      },
+      {
+        "sourceId": "syn-interview-05",
+        "kind": "interview",
+        "synthetic": true,
+        "text": "Synthetic team E: feedback may refer to scheduling or account setup.",
+        "extraction": {
+          "theme": "workflow",
+          "featureId": "reminder",
+          "quote": "may refer to scheduling or account setup",
+          "start": 27,
+          "end": 67,
+          "assertion": "unclear-reminder-scope",
+          "confidence": 0.45
+        }
+      }
+    ],
+    "evidence": [
+      {
+        "id": "evidence-syn-support-01",
+        "sourceId": "syn-support-01",
+        "provenanceKey": "recorded-source-1",
+        "featureId": "reminder",
+        "kind": "support",
+        "theme": "workflow",
+        "quote": "reminder setup takes too many steps",
+        "start": 18,
+        "end": 53,
+        "assertion": "reduce-reminder-steps",
+        "confidence": 0.94,
+        "extractionMode": "recorded-simulation",
+        "synthetic": true,
+        "status": "supported"
+      },
+      {
+        "id": "evidence-syn-interview-02",
+        "sourceId": "syn-interview-02",
+        "provenanceKey": "recorded-source-2",
+        "featureId": "reminder",
+        "kind": "interview",
+        "theme": "workflow",
+        "quote": "reminder setup takes too many steps",
+        "start": 18,
+        "end": 53,
+        "assertion": "reduce-reminder-steps",
+        "confidence": 0.91,
+        "extractionMode": "recorded-simulation",
+        "synthetic": true,
+        "status": "supported"
+      },
+      {
+        "id": "evidence-syn-usage-03",
+        "sourceId": "syn-usage-03",
+        "provenanceKey": "recorded-source-3",
+        "featureId": "reminder",
+        "kind": "usage",
+        "theme": "reliability",
+        "quote": "reminder status is hard to find",
+        "start": 18,
+        "end": 49,
+        "assertion": "surface-reminder-status",
+        "confidence": 0.89,
+        "extractionMode": "recorded-simulation",
+        "synthetic": true,
+        "status": "supported"
+      },
+      {
+        "id": "evidence-syn-sales-04",
+        "sourceId": "syn-sales-04",
+        "provenanceKey": "recorded-source-4",
+        "featureId": "reminder",
+        "kind": "sales",
+        "theme": "accessibility",
+        "quote": "reminder labels need clearer wording",
+        "start": 18,
+        "end": 54,
+        "assertion": "clarify-reminder-labels",
+        "confidence": 0.88,
+        "extractionMode": "recorded-simulation",
+        "synthetic": true,
+        "status": "supported"
+      }
+    ],
+    "ambiguous": [
+      {
+        "id": "evidence-syn-interview-05",
+        "sourceId": "syn-interview-05",
+        "provenanceKey": "recorded-source-5",
+        "featureId": "reminder",
+        "kind": "interview",
+        "theme": "workflow",
+        "quote": "may refer to scheduling or account setup",
+        "start": 27,
+        "end": 67,
+        "assertion": "unclear-reminder-scope",
+        "confidence": 0.45,
+        "extractionMode": "recorded-simulation",
+        "synthetic": true,
+        "status": "ambiguous",
+        "reason": "Human clarification required; excluded from supporting evidence."
+      }
+    ],
+    "rejections": [
+      {
+        "sourceId": "syn-recorded-injection",
+        "code": "INJECTED_INSTRUCTIONS",
+        "reason": "Recorded refusal: embedded instructions are not evidence.",
+        "recorded": true
+      },
+      {
+        "sourceId": "syn-recorded-sensitive",
+        "code": "SENSITIVE_DATA",
+        "reason": "Recorded refusal: patient-shaped sensitive data is forbidden.",
+        "recorded": true
+      },
+      {
+        "sourceId": "syn-recorded-hallucination",
+        "code": "UNSUPPORTED_ASSERTION",
+        "reason": "Recorded refusal: an assertion was absent from the extraction fixture.",
+        "recorded": true
+      }
+    ],
+    "beta": {
+      "sampleSize": 40,
+      "observedDays": 7,
+      "completionRate": 0.95,
+      "errorRate": 0,
+      "observations": "Synthetic cohort: 38 of 40 attempted reminder setups completed over seven full days. Error rate measured per setup; small cohort and invented observations limit inference.",
+      "riskNotes": "Small synthetic cohort; no production baseline or causal impact evidence. Monitor repeated setup failures and status confusion.",
+      "adverseEvents": [],
+      "adverseEscalation": "Synthetic Engineering owner pauses the simulated rollout, inspects failed setup events and records rollback evidence.",
+      "completionCount": 38,
+      "errorCount": 0,
+      "version": 1,
+      "approval": {
+        "owner": "Synthetic Product owner",
+        "contentVersion": 1,
+        "at": "2026-10-13T09:05:00.000Z",
+        "simulated": true,
+        "betaVersion": 1
+      }
+    },
+    "release": {
+      "version": 2,
+      "status": "rolled-back",
+      "security": {
+        "owner": "Synthetic Security reviewer",
+        "contentVersion": 1,
+        "at": "2026-10-13T09:06:00.000Z",
+        "simulated": true,
+        "version": 1,
+        "notes": "Synthetic-only review: exact-origin command checks, strict JSON intake, HttpOnly isolated sessions, bounded requests and safe escaped rendering reviewed. No certification or production security claim.",
+        "scope": "Synthetic operational prototype only; this is not certification."
+      },
+      "privacy": {
+        "owner": "Synthetic Privacy reviewer",
+        "contentVersion": 1,
+        "at": "2026-10-13T09:07:00.000Z",
+        "simulated": true,
+        "version": 1,
+        "notes": "Synthetic-only operational data; sensitive and identifying input refused, rejected raw content not retained, visitor sessions isolated and export excludes session identifiers and receipts. No real customer data accepted.",
+        "scope": "Synthetic operational prototype only; this is not certification."
+      },
+      "rollback": {
+        "owner": "Synthetic Engineering owner",
+        "contentVersion": 1,
+        "at": "2026-10-13T09:08:00.000Z",
+        "simulated": true,
+        "version": 1,
+        "testEvidence": "Synthetic rollback rehearsal: pause the reminder setup experiment, restore the prior setup flow, verify queued setup events are not duplicated, and review status visibility. Rehearsal completed in the bounded fixture.",
+        "successful": true
+      },
+      "gtm": {
+        "owner": "Synthetic GTM owner",
+        "contentVersion": 1,
+        "at": "2026-10-13T09:11:00.000Z",
+        "simulated": true,
+        "version": 2,
+        "audience": "Internal synthetic beta teams",
+        "message": "Revised synthetic handoff: setup clarity and status visibility review.",
+        "supportPlan": "Synthetic Support owner monitors setup failures, links each signal to its exact source and escalates repeated failures to the Synthetic Engineering owner."
+      },
+      "signoff": null,
+      "health": {
+        "healthy": false,
+        "owner": "Synthetic Engineering owner",
+        "note": "Synthetic health probe detected repeated reminder setup failure. Pause the simulated rollout and restore the prior setup flow.",
+        "at": "2026-10-13T09:14:00.000Z",
+        "simulated": true
+      },
+      "rollbackAction": {
+        "status": "resolved",
+        "owner": "Synthetic Engineering owner",
+        "nextAction": "Complete post-review before considering a new scoped release.",
+        "evidence": "Synthetic rollback completed: previous setup flow restored; event queue checked for duplicate processing; repeated setup attempts recover. Follow-up owner reviews the failure before a new scoped release.",
+        "at": "2026-10-13T09:15:00.000Z"
+      }
+    },
+    "postReview": {
+      "owner": "Synthetic Product owner",
+      "observedOutcome": "Synthetic rollout was paused after failed health evidence and the tested rollback restored the prior setup flow.",
+      "baseline": null,
+      "measured": 38,
+      "denominator": 40,
+      "window": "Seven full synthetic days",
+      "notes": "Baseline missing; no efficiency or causal gain claimed. Investigate repeated failures and collect a comparable pre-change cohort.",
+      "contentVersion": 1,
+      "at": "2026-10-13T09:16:00.000Z",
+      "impact": "Baseline missing: no impact improvement claim can be made.",
+      "synthetic": true
+    },
+    "weeklyReview": {
+      "owner": "Synthetic Product owner",
+      "decision": "Review current evidence",
+      "nextAction": "Synthetic owner gathers baseline",
+      "baseline": null,
+      "observed": 5,
+      "supportingSources": 4,
+      "baselineStatus": "missing",
+      "at": "2026-10-13T09:03:00.000Z",
+      "synthetic": true
+    },
+    "outbox": [],
+    "audit": [
+      {
+        "revision": 0,
+        "at": "2026-10-13T09:00:00.000Z",
+        "type": "simulation-initialized",
+        "outcome": "Synthetic workspace created; recorded refusals contain metadata only."
+      },
+      {
+        "revision": 1,
+        "at": "2026-10-13T09:01:00.000Z",
+        "type": "importRows",
+        "owner": "Synthetic Product owner",
+        "outcome": "committed",
+        "contentVersion": 1
+      },
+      {
+        "revision": 2,
+        "at": "2026-10-13T09:02:00.000Z",
+        "type": "prioritize",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 3,
+        "at": "2026-10-13T09:03:00.000Z",
+        "type": "weeklyReview",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 4,
+        "at": "2026-10-13T09:04:00.000Z",
+        "type": "recordBeta",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 5,
+        "at": "2026-10-13T09:05:00.000Z",
+        "type": "approveBeta",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 6,
+        "at": "2026-10-13T09:06:00.000Z",
+        "type": "recordReview",
+        "owner": "Synthetic Security reviewer",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 7,
+        "at": "2026-10-13T09:07:00.000Z",
+        "type": "recordReview",
+        "owner": "Synthetic Privacy reviewer",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 8,
+        "at": "2026-10-13T09:08:00.000Z",
+        "type": "recordRollback",
+        "owner": "Synthetic Engineering owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 9,
+        "at": "2026-10-13T09:09:00.000Z",
+        "type": "recordGtm",
+        "owner": "Synthetic GTM owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 10,
+        "at": "2026-10-13T09:10:00.000Z",
+        "type": "signRelease",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 11,
+        "at": "2026-10-13T09:11:00.000Z",
+        "type": "recordGtm",
+        "owner": "Synthetic GTM owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 12,
+        "at": "2026-10-13T09:12:00.000Z",
+        "type": "signRelease",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      },
+      {
+        "revision": 13,
+        "at": "2026-10-13T09:13:00.000Z",
+        "type": "simulateRelease",
+        "owner": "Synthetic Product owner",
+        "outcome": "simulated-release",
+        "contentVersion": 1
+      },
+      {
+        "revision": 14,
+        "at": "2026-10-13T09:14:00.000Z",
+        "type": "recordHealth",
+        "owner": "Synthetic Engineering owner",
+        "outcome": "paused",
+        "contentVersion": 1
+      },
+      {
+        "revision": 15,
+        "at": "2026-10-13T09:15:00.000Z",
+        "type": "resolveRollback",
+        "owner": "Synthetic Engineering owner",
+        "outcome": "simulated-rollback",
+        "contentVersion": 1
+      },
+      {
+        "revision": 16,
+        "at": "2026-10-13T09:16:00.000Z",
+        "type": "postReview",
+        "owner": "Synthetic Product owner",
+        "outcome": "recorded",
+        "contentVersion": 1
+      }
+    ]
+  },
+  "gates": {
+    "beta": {
+      "ready": true,
+      "blockers": []
+    },
+    "release": {
+      "ready": false,
+      "blockers": [
+        {
+          "code": "RELEASE_SIGNATURE",
+          "label": "Release decision has no current simulated human signature.",
+          "owner": "Synthetic Product owner",
+          "nextAction": "Review all gate evidence and sign this exact release version."
+        },
+        {
+          "code": "NEW_SCOPE_REQUIRED",
+          "label": "This rollout outcome is reviewed; a new scoped version is required for another release.",
+          "owner": "Synthetic Product owner",
+          "nextAction": "Review baseline gaps and record a new scoped feature or beta decision."
+        }
+      ]
+    },
+    "postReview": {
+      "ready": true,
+      "blockers": []
+    },
+    "nextDecision": "Synthetic Product owner: Review the observed outcome and baseline gaps, then record a new scoped feature or beta decision.",
+    "nextPhase": "outcome-review",
+    "nextView": "review",
+    "nextAction": "weeklyReview",
+    "policy": {
+      "minIndependentSources": 2,
+      "minSampleSize": 30,
+      "minObservedDays": 7,
+      "minCompletionRate": 0.9,
+      "maxErrorRate": 0.01,
+      "maxImportRows": 20,
+      "maxSources": 100,
+      "maxAuditEntries": 200,
+      "maxReceipts": 150,
+      "maxOutbox": 30,
+      "maxDispatchPerWindow": 3
+    },
+    "synthetic": true
+  },
+  "consistency": {
+    "revision": 16,
+    "auditEntries": 17,
+    "lastAuditRevision": 16,
+    "consistent": true
+  },
+  "privacy": {
+    "data": "synthetic-only",
+    "credentialsIncluded": false,
+    "sessionIdentifiersIncluded": false,
+    "externalNotificationsSent": 0
+  }
+}

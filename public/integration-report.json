@@ -1,0 +1,881 @@
+{
+  "generatedAt": "2026-10-13T08:54:31.922Z",
+  "environment": "Isolated local Worker and SQLite persistence integration",
+  "scenarioCount": 31,
+  "assertionCount": 83,
+  "passed": 31,
+  "failed": 0,
+  "durationMs": 4590.376,
+  "cases": [
+    {
+      "id": "http-static-security-headers",
+      "title": "Static asset responses receive Worker security headers",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 200; MIME sniffing disabled: nosniff; CSP limits scripts to self: true; Framing disabled: DENY",
+      "actual": "HTTP status: 200; MIME sniffing disabled: nosniff; CSP limits scripts to self: true; Framing disabled: DENY",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "MIME sniffing disabled",
+          "expected": "nosniff",
+          "actual": "nosniff",
+          "passed": true
+        },
+        {
+          "label": "CSP limits scripts to self",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Framing disabled",
+          "expected": "DENY",
+          "actual": "DENY",
+          "passed": true
+        }
+      ],
+      "durationMs": 167.676
+    },
+    {
+      "id": "http-origin-missing",
+      "title": "Session creation requires an explicit matching Origin",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 403; Refusal code: FORBIDDEN_ORIGIN",
+      "actual": "HTTP status: 403; Refusal code: FORBIDDEN_ORIGIN",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "403",
+          "actual": "403",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "FORBIDDEN_ORIGIN",
+          "actual": "FORBIDDEN_ORIGIN",
+          "passed": true
+        }
+      ],
+      "durationMs": 9.982
+    },
+    {
+      "id": "http-hostile-origin",
+      "title": "A hostile origin cannot create a visitor session",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 403",
+      "actual": "HTTP status: 403",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "403",
+          "actual": "403",
+          "passed": true
+        }
+      ],
+      "durationMs": 7.911
+    },
+    {
+      "id": "http-host-mismatch",
+      "title": "A destination outside configured origin is refused",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 403",
+      "actual": "HTTP status: 403",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "403",
+          "actual": "403",
+          "passed": true
+        }
+      ],
+      "durationMs": 4.281
+    },
+    {
+      "id": "http-session-cookie",
+      "title": "Each visitor receives an opaque restricted cookie",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Distinct opaque cookies: true; Cookie HttpOnly: true; Cookie SameSite: true; Initial fixed simulation time: 2026-10-13T09:00:00.000Z; Receipts absent from public state: false",
+      "actual": "Distinct opaque cookies: true; Cookie HttpOnly: true; Cookie SameSite: true; Initial fixed simulation time: 2026-10-13T09:00:00.000Z; Receipts absent from public state: false",
+      "assertionCount": 5,
+      "assertions": [
+        {
+          "label": "Distinct opaque cookies",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Cookie HttpOnly",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Cookie SameSite",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Initial fixed simulation time",
+          "expected": "2026-10-13T09:00:00.000Z",
+          "actual": "2026-10-13T09:00:00.000Z",
+          "passed": true
+        },
+        {
+          "label": "Receipts absent from public state",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        }
+      ],
+      "durationMs": 11.858
+    },
+    {
+      "id": "http-no-session",
+      "title": "Reads require a visitor session cookie",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 401",
+      "actual": "HTTP status: 401",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "401",
+          "actual": "401",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.275
+    },
+    {
+      "id": "http-forged-session",
+      "title": "A syntactically valid forged cookie has no workspace",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 401",
+      "actual": "HTTP status: 401",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "401",
+          "actual": "401",
+          "passed": true
+        }
+      ],
+      "durationMs": 4.066
+    },
+    {
+      "id": "http-duplicate-cookie",
+      "title": "Duplicate session cookies are refused",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 401",
+      "actual": "HTTP status: 401",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "401",
+          "actual": "401",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.351
+    },
+    {
+      "id": "http-cross-site-read",
+      "title": "Browser cross-site reads are refused",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 403",
+      "actual": "HTTP status: 403",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "403",
+          "actual": "403",
+          "passed": true
+        }
+      ],
+      "durationMs": 2.572
+    },
+    {
+      "id": "http-query-rejected",
+      "title": "Unsupported API query parameters are refused",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+      "actual": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "400",
+          "actual": "400",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "INVALID_SCHEMA",
+          "actual": "INVALID_SCHEMA",
+          "passed": true
+        }
+      ],
+      "durationMs": 2.051
+    },
+    {
+      "id": "http-method-rejected",
+      "title": "Unsupported methods cannot mutate state",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 405",
+      "actual": "HTTP status: 405",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "405",
+          "actual": "405",
+          "passed": true
+        }
+      ],
+      "durationMs": 2.435
+    },
+    {
+      "id": "http-content-type",
+      "title": "Non-JSON command bodies are refused",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 400",
+      "actual": "HTTP status: 400",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "400",
+          "actual": "400",
+          "passed": true
+        }
+      ],
+      "durationMs": 2.796
+    },
+    {
+      "id": "http-invalid-json",
+      "title": "Malformed JSON is refused before command execution",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+      "actual": "HTTP status: 400; Refusal code: INVALID_SCHEMA",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "400",
+          "actual": "400",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "INVALID_SCHEMA",
+          "actual": "INVALID_SCHEMA",
+          "passed": true
+        }
+      ],
+      "durationMs": 2.611
+    },
+    {
+      "id": "http-stream-size-bound",
+      "title": "Actual body size is bounded without Content-Length",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 413; Refusal code: BODY_TOO_LARGE",
+      "actual": "HTTP status: 413; Refusal code: BODY_TOO_LARGE",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "413",
+          "actual": "413",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "BODY_TOO_LARGE",
+          "actual": "BODY_TOO_LARGE",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.373
+    },
+    {
+      "id": "http-command-contract",
+      "title": "Commands require revision and idempotency key",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 400",
+      "actual": "HTTP status: 400",
+      "assertionCount": 1,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "400",
+          "actual": "400",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.685
+    },
+    {
+      "id": "http-preview-required",
+      "title": "Import cannot bypass an exact server-issued preview",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 409; Refusal code: STALE_PREVIEW; No imported rows: 0",
+      "actual": "HTTP status: 409; Refusal code: STALE_PREVIEW; No imported rows: 0",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "409",
+          "actual": "409",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "STALE_PREVIEW",
+          "actual": "STALE_PREVIEW",
+          "passed": true
+        },
+        {
+          "label": "No imported rows",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        }
+      ],
+      "durationMs": 4.045
+    },
+    {
+      "id": "http-preview-import",
+      "title": "Preview and commit persist verified evidence transactionally",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Preview HTTP status: 200; Preview permission: true; Commit HTTP status: 200; Source rows persisted: 4; Revision: 1",
+      "actual": "Preview HTTP status: 200; Preview permission: true; Commit HTTP status: 200; Source rows persisted: 4; Revision: 1",
+      "assertionCount": 5,
+      "assertions": [
+        {
+          "label": "Preview HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Preview permission",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Commit HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Source rows persisted",
+          "expected": "4",
+          "actual": "4",
+          "passed": true
+        },
+        {
+          "label": "Revision",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        }
+      ],
+      "durationMs": 12.3
+    },
+    {
+      "id": "http-import-receipt-replay",
+      "title": "An identical import replay preserves revision and audit count",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 200; Receipt replay: true; No new revision: 1; No new audit entry: 2",
+      "actual": "HTTP status: 200; Receipt replay: true; No new revision: 1; No new audit entry: 2",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Receipt replay",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "No new revision",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "No new audit entry",
+          "expected": "2",
+          "actual": "2",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.934
+    },
+    {
+      "id": "http-content-bound-receipt",
+      "title": "An idempotency key cannot apply different content",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 409; Refusal code: IDEMPOTENCY_CONFLICT",
+      "actual": "HTTP status: 409; Refusal code: IDEMPOTENCY_CONFLICT",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "409",
+          "actual": "409",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "IDEMPOTENCY_CONFLICT",
+          "actual": "IDEMPOTENCY_CONFLICT",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.225
+    },
+    {
+      "id": "http-reload-and-isolation",
+      "title": "Reload retains one visitor state while another remains empty",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Reload source count: 4; Reload revision: 1; Other visitor source count: 0; Other visitor revision: 0",
+      "actual": "Reload source count: 4; Reload revision: 1; Other visitor source count: 0; Other visitor revision: 0",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Reload source count",
+          "expected": "4",
+          "actual": "4",
+          "passed": true
+        },
+        {
+          "label": "Reload revision",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "Other visitor source count",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Other visitor revision",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        }
+      ],
+      "durationMs": 6.79
+    },
+    {
+      "id": "http-atomic-invalid-import",
+      "title": "A partially invalid preview cannot write any source rows",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Preview blocked: false; Commit HTTP status: 409; Atomic source count: 0; Atomic revision: 0",
+      "actual": "Preview blocked: false; Commit HTTP status: 409; Atomic source count: 0; Atomic revision: 0",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Preview blocked",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "Commit HTTP status",
+          "expected": "409",
+          "actual": "409",
+          "passed": true
+        },
+        {
+          "label": "Atomic source count",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Atomic revision",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        }
+      ],
+      "durationMs": 9.268
+    },
+    {
+      "id": "http-stale-mutation",
+      "title": "Stale commands cannot create audit or state writes",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 409; Refusal code: STALE_REVISION; Revision unchanged: 1; Audit count unchanged: 2",
+      "actual": "HTTP status: 409; Refusal code: STALE_REVISION; Revision unchanged: 1; Audit count unchanged: 2",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "409",
+          "actual": "409",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "STALE_REVISION",
+          "actual": "STALE_REVISION",
+          "passed": true
+        },
+        {
+          "label": "Revision unchanged",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "Audit count unchanged",
+          "expected": "2",
+          "actual": "2",
+          "passed": true
+        }
+      ],
+      "durationMs": 5.01
+    },
+    {
+      "id": "http-concurrent-identical",
+      "title": "Concurrent identical commands share a single transactional receipt",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Both replay-safe responses: [200,200]; Exactly one replay: 1; One committed revision: 1",
+      "actual": "Both replay-safe responses: [200,200]; Exactly one replay: 1; One committed revision: 1",
+      "assertionCount": 3,
+      "assertions": [
+        {
+          "label": "Both replay-safe responses",
+          "expected": "[200,200]",
+          "actual": "[200,200]",
+          "passed": true
+        },
+        {
+          "label": "Exactly one replay",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "One committed revision",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        }
+      ],
+      "durationMs": 5.468
+    },
+    {
+      "id": "http-concurrent-conflict",
+      "title": "Concurrent different commands allow only one mutation at a revision",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "One commit and one stale response: [200,409]; Only one new revision: 3",
+      "actual": "One commit and one stale response: [200,409]; Only one new revision: 3",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "One commit and one stale response",
+          "expected": "[200,409]",
+          "actual": "[200,409]",
+          "passed": true
+        },
+        {
+          "label": "Only one new revision",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        }
+      ],
+      "durationMs": 6.243
+    },
+    {
+      "id": "http-export-consistency",
+      "title": "Export agrees with persisted audit and excludes receipts",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 200; Audit consistent: true; Last audit revision: 3; Receipts excluded: false; Download attachment: true; Cache disabled: no-store",
+      "actual": "HTTP status: 200; Audit consistent: true; Last audit revision: 3; Receipts excluded: false; Download attachment: true; Cache disabled: no-store",
+      "assertionCount": 6,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Audit consistent",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Last audit revision",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        },
+        {
+          "label": "Receipts excluded",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "Download attachment",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Cache disabled",
+          "expected": "no-store",
+          "actual": "no-store",
+          "passed": true
+        }
+      ],
+      "durationMs": 3.011
+    },
+    {
+      "id": "http-live-evaluation",
+      "title": "Live evaluation executes isolated rules without mutating visitor workflow",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "HTTP status: 200; Executed at least 20 scenarios: true; Baseline failures: 0; Injected faults detected: 3; Workflow revision unchanged: 3",
+      "actual": "HTTP status: 200; Executed at least 20 scenarios: true; Baseline failures: 0; Injected faults detected: 3; Workflow revision unchanged: 3",
+      "assertionCount": 5,
+      "assertions": [
+        {
+          "label": "HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Executed at least 20 scenarios",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Baseline failures",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Injected faults detected",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        },
+        {
+          "label": "Workflow revision unchanged",
+          "expected": "3",
+          "actual": "3",
+          "passed": true
+        }
+      ],
+      "durationMs": 92.646
+    },
+    {
+      "id": "http-evaluation-bound",
+      "title": "Evaluation requests stop after ten visitor runs",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Eleventh evaluation status: 429; Refusal code: RATE_LIMITED",
+      "actual": "Eleventh evaluation status: 429; Refusal code: RATE_LIMITED",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "Eleventh evaluation status",
+          "expected": "429",
+          "actual": "429",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "RATE_LIMITED",
+          "actual": "RATE_LIMITED",
+          "passed": true
+        }
+      ],
+      "durationMs": 603.422
+    },
+    {
+      "id": "http-request-bound",
+      "title": "Visitor request bursts are bounded by the server",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Bounded burst status: 429; Refusal code: RATE_LIMITED",
+      "actual": "Bounded burst status: 429; Refusal code: RATE_LIMITED",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "Bounded burst status",
+          "expected": "429",
+          "actual": "429",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "RATE_LIMITED",
+          "actual": "RATE_LIMITED",
+          "passed": true
+        }
+      ],
+      "durationMs": 168.078
+    },
+    {
+      "id": "http-invalid-request-bound",
+      "title": "Invalid domain commands count toward request limits without audit mutations",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Workflow revision after ten invalid commands: 0; Audit after ten invalid commands: 1; Invalid request burst status: 429; Refusal code: RATE_LIMITED",
+      "actual": "Workflow revision after ten invalid commands: 0; Audit after ten invalid commands: 1; Invalid request burst status: 429; Refusal code: RATE_LIMITED",
+      "assertionCount": 4,
+      "assertions": [
+        {
+          "label": "Workflow revision after ten invalid commands",
+          "expected": "0",
+          "actual": "0",
+          "passed": true
+        },
+        {
+          "label": "Audit after ten invalid commands",
+          "expected": "1",
+          "actual": "1",
+          "passed": true
+        },
+        {
+          "label": "Invalid request burst status",
+          "expected": "429",
+          "actual": "429",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "RATE_LIMITED",
+          "actual": "RATE_LIMITED",
+          "passed": true
+        }
+      ],
+      "durationMs": 257
+    },
+    {
+      "id": "http-public-fail-closed",
+      "title": "Public-mode API refuses sessions without configured rate protection",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Unprovisioned API status: 503; Refusal code: RATE_LIMIT_UNAVAILABLE",
+      "actual": "Unprovisioned API status: 503; Refusal code: RATE_LIMIT_UNAVAILABLE",
+      "assertionCount": 2,
+      "assertions": [
+        {
+          "label": "Unprovisioned API status",
+          "expected": "503",
+          "actual": "503",
+          "passed": true
+        },
+        {
+          "label": "Refusal code",
+          "expected": "RATE_LIMIT_UNAVAILABLE",
+          "actual": "RATE_LIMIT_UNAVAILABLE",
+          "passed": true
+        }
+      ],
+      "durationMs": 81.584
+    },
+    {
+      "id": "http-secure-cookie-policy",
+      "title": "Provisioned HTTPS mode uses a Secure host-only session cookie",
+      "category": "Worker integration",
+      "status": "passed",
+      "expected": "Provisioned session HTTP status: 200; Host-prefixed cookie: true; Secure attribute: true; No Domain attribute: false; HttpOnly attribute: true",
+      "actual": "Provisioned session HTTP status: 200; Host-prefixed cookie: true; Secure attribute: true; No Domain attribute: false; HttpOnly attribute: true",
+      "assertionCount": 5,
+      "assertions": [
+        {
+          "label": "Provisioned session HTTP status",
+          "expected": "200",
+          "actual": "200",
+          "passed": true
+        },
+        {
+          "label": "Host-prefixed cookie",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "Secure attribute",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        },
+        {
+          "label": "No Domain attribute",
+          "expected": "false",
+          "actual": "false",
+          "passed": true
+        },
+        {
+          "label": "HttpOnly attribute",
+          "expected": "true",
+          "actual": "true",
+          "passed": true
+        }
+      ],
+      "durationMs": 3096.429
+    }
+  ]
+}

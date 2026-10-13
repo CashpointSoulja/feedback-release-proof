@@ -1,0 +1,10 @@
+node_modules/
+work/
+.wrangler/
+.dev.vars
+.env*
+!*.example
+coverage/
+wrangler.approved.json
+__pycache__/
+*.pyc
