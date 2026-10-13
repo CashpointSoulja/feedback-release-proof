@@ -6,7 +6,7 @@ Independent concept for Semble. Unofficial. Synthetic operational data only. Not
 
 ## Current delivery status
 
-**Recording and composition are blocked, not completed.** No Cloudflare account destination or scoped deployment credential is configured, and `api.cloudflare.com` is not an allowed network destination in the current environment. There is no verified public HTTPS application URL. No final video, public footage, voice track or public screenshot has been recorded by these scripts. Local screenshots and local UI verification cannot substitute for the requested public recording.
+**Recording and composition are blocked, not completed.** No approved Cloudflare account destination or scoped deployment credential is configured yet. There is no verified public HTTPS application URL. No final video, public footage, voice track or public screenshot has been recorded by these scripts. Local screenshots and local UI verification cannot substitute for the requested public recording.
 
 The files below prepare a reproducible capture once a real deployment exists. The application must be deployed and verified separately using an authorized account destination and scoped credential. Deployment does not send this work anywhere. Ayo must watch the entire final video with sound before any sharing, outreach or application submission.
 
