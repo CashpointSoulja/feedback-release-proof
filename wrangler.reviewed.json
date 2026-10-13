@@ -1,0 +1,55 @@
+{
+  "name": "feedback-release-proof",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-08-06",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SESSIONS",
+        "class_name": "VisitorSession"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "VisitorSession"
+      ]
+    }
+  ],
+  "unsafe": {
+    "bindings": [
+      {
+        "name": "SESSION_LIMITER",
+        "type": "ratelimit",
+        "namespace_id": "2026101302",
+        "simple": {
+          "limit": 10,
+          "period": 60
+        }
+      },
+      {
+        "name": "REQUEST_LIMITER",
+        "type": "ratelimit",
+        "namespace_id": "2026101303",
+        "simple": {
+          "limit": 120,
+          "period": 60
+        }
+      }
+    ]
+  },
+  "vars": {
+    "APP_ORIGIN": "https://feedback-release-proof.ayoahmed-49d.workers.dev",
+    "LOCAL_DEV": "false",
+    "RATE_LIMIT_ENFORCED": "true"
+  },
+  "account_id": "649d0a153ac1f1683adc45b8d9cf4f8f"
+}
