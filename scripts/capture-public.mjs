@@ -93,10 +93,10 @@ async function control(testid) {
 async function click(testid) {
   const { locator, box } = await control(testid);
   ensure(await locator.isEnabled(), `Control ${testid} is disabled.`);
-  await page.mouse.move(box.x + box.width/2, box.y + box.height/2, { steps: 5 });
-  await page.mouse.click(box.x + box.width/2, box.y + box.height/2);
+  await page.mouse.move(box.x + box.width/2, box.y + box.height/2, { steps: 1 });
+  await locator.click({ timeout: 4000 });
   logAction('click', { testid });
-  await pause(100);
+  if (recording) await pause(100);
   checkDeadline();
 }
 async function inspect(locator, label, expected) {
@@ -105,7 +105,7 @@ async function inspect(locator, label, expected) {
   await locator.scrollIntoViewIfNeeded();
   const box = await locator.boundingBox();
   ensure(box && box.x >= 0 && box.y >= 0 && box.x + box.width <= plan.width + 1 && box.y + box.height <= plan.height + 1, `${label} is outside the vertical frame.`);
-  await page.mouse.move(Math.min(box.x + box.width/2, plan.width-12), Math.min(box.y + box.height/2, plan.height-12), { steps: 4 });
+  await page.mouse.move(Math.min(box.x + box.width/2, plan.width-12), Math.min(box.y + box.height/2, plan.height-12), { steps: 1 });
   const text = await locator.innerText();
   ensure(expected.test(text), `${label} does not show the required result.`);
   logAction('inspect-visible', { label, text });
@@ -128,7 +128,7 @@ async function closeDialog() {
 }
 async function fill(testid, value) {
   const { box } = await control(testid);
-  await page.mouse.move(box.x + box.width/2, box.y + box.height/2, { steps: 4 });
+  await page.mouse.move(box.x + box.width/2, box.y + box.height/2, { steps: 1 });
   await page.mouse.click(box.x + box.width/2, box.y + box.height/2);
   await page.keyboard.press('Control+A');
   await page.keyboard.insertText(String(value));
@@ -202,7 +202,7 @@ async function saveForm(kind, fields, opener = `evidence-edit-${kind}`) {
 try {
   browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || '/usr/bin/chromium', headless: true, args: ['--no-sandbox'] });
   context = await browser.newContext({ viewport: { width: plan.width, height: plan.height }, deviceScaleFactor: 1, acceptDownloads: true,
-    reducedMotion: 'no-preference', ignoreHTTPSErrors: false, serviceWorkers: 'block' });
+    reducedMotion: 'no-preference', ignoreHTTPSErrors: false, serviceWorkers: 'block', ...(process.env.PREPARED_STATE ? {storageState: process.env.PREPARED_STATE} : {}) });
   await context.route('**/*', route => {
     const requested = new URL(route.request().url());
     if (requested.origin !== origin) {
@@ -259,7 +259,8 @@ try {
     ensure(hash(bytes) === hash(expected), `Public ${file} differs from this script's verified UI contract. Deploy the current package or update the capture contract.`);
     manifest.application_assets[file] = hash(bytes);
   }
-  await prepareUi();
+  if (!process.env.PREPARED_STATE) await prepareUi();
+  if (process.env.PREP_ONLY) { await context.storageState({path: process.env.PREP_ONLY}); console.log("Prepared public UI state saved for actual recording."); await browser.close(); process.exit(0); }
   await click('nav-overview');
   const prepared = await stateCheck('Prepared valid beta/reviews/handoff, unresolved rollback and signature', s =>
     s.gates.beta.ready && s.state.beta.approval && s.state.release.security && s.state.release.privacy && s.state.release.gtm &&
@@ -273,11 +274,11 @@ try {
   cdp.on('Page.screencastFrame', event => {
     const received = performance.now();
     if (started === undefined) { started = received; manifest.first_browser_timestamp = event.metadata.timestamp; firstFrameResolve(); }
-    const timestamp = event.metadata.timestamp - manifest.first_browser_timestamp;
+    const timestamp = (received - started) / 1000; // Monotonic reception clock; CDP source time retained below for diagnosis.
     const file = `frames/${String(frames.length).padStart(6, '0')}.jpg`;
     const bytes = Buffer.from(event.data, 'base64');
     if (!Number.isFinite(timestamp) || timestamp < 0 || (frames.length && timestamp < frames.at(-1).timestamp)) frameFailure = new Error('Browser source timestamps are missing or non-monotonic.');
-    frames.push({ file, timestamp, sha256: hash(bytes) });
+    frames.push({ file, timestamp, browserSourceTimestamp: event.metadata.timestamp, sha256: hash(bytes) });
     writeChain = writeChain.then(() => fs.writeFile(path.join(out, file), bytes)).catch(error => { frameFailure = error; });
     cdp.send('Page.screencastFrameAck', { sessionId: event.sessionId }).catch(error => { frameFailure = error; });
   });
