@@ -7,8 +7,7 @@ No public Worker has been deployed and no public footage has been captured.
 The exact deployment blockers are:
 
 1. No explicitly approved Cloudflare account ID, new Worker destination and public HTTPS origin have been supplied.
-2. No scoped Cloudflare account authentication is configured in the attached environment.
-3. The current outbound policy does not list `api.cloudflare.com`, which deployment requires. Preserve the environment proxy and TLS verification; request destination configuration through the supported environment workflow when an account is approved.
+2. Scoped Cloudflare authentication is configured only after an account is explicitly approved.
 
 I will use only a new Worker named `feedback-release-proof` in an explicitly approved account, with the reviewed SQLite Durable Object migration and session-creation abuse controls. The source config is deployment-blocked by default. I will not replace or delete existing resources, choose another hosting provider, enable a paid API, or claim a live deployment from a build dry run. Account free-tier eligibility and limits need checking in the approved account before deployment; no payment or card flow belongs in this concept.
 
@@ -24,7 +23,7 @@ When the destination is explicitly approved, store the non-secret review record 
 }
 ```
 
-Use scoped authentication through the environment credential configuration, not the browser UI or committed files. The deployment script requires `CLOUDFLARE_ACCOUNT_ID` to match the approved account and `CLOUDFLARE_API_TOKEN` to be present without printing either secret. It creates a temporary deployment config and invokes the local Wrangler executable; it does not start interactive login. Review Worker/Durable Object permissions against the actual account, keep the token narrow, and do not grant destructive resource permissions.
+Use scoped authentication through environment credentials, never committed files. The deployment script requires `CLOUDFLARE_ACCOUNT_ID` to match the approved account and `CLOUDFLARE_API_TOKEN` to be present without printing either secret. It creates a temporary deployment config and invokes the local Wrangler executable; it does not start interactive login. Review Worker/Durable Object permissions against the actual account, keep the token narrow, and do not grant destructive resource permissions.
 
 The guarded script first performs a read-only API lookup and proceeds only when the approved destination is explicitly confirmed as a missing Worker. Any existing destination, authentication error or ambiguous response blocks deployment.
 
